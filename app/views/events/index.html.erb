@@ -1,0 +1,13 @@
+<% @events.each do |event| %>
+<ul>
+<li><%= event.location %></li>
+<li><%= event.date %></li>
+<li><%= event.price %></li>
+<li><%= event.max_participants %></li>
+<li><%= event.description %></li>
+<li><%= event.video_link %></li>
+<li>There is also a photo attached, but adding it unstyled would be unwise!</li>
+<%= link_to 'Show', event %>
+
+</ul>
+<% end %>
