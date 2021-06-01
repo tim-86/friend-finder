@@ -7,17 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-h1{
-  font-family: 'Poppins';
-}
-
-body{
-  font-family: 'Open Sans';
-  background-color: white;
-}
