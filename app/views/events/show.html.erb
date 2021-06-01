@@ -1,5 +1,8 @@
+<div class = container>
+<div class = "show-page-banner" style="background-image: url(<%= cl_image_path @event.photo %> )">
 
-<h1>This will display an individual event with its users</h1>
+
+
 
 <% bookings= Booking.all %>
 <% bookings.each do |booking| %>
@@ -8,29 +11,41 @@
 <% end %>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <button id="show-button" type="button" class="btn btn-primary spacer" data-toggle="modal" data-target="#exampleModal">
   Book now
 </button>
-<% @event.bookings.each do |booking| %>
- <td><%= link_to 'Destroy', booking_path(booking) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Book this event!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for [@event, @booking] do |f| -%>
-        <%= f.submit %>
-        <% end %>
+  <% @event.bookings.each do |booking| %>
+  <td><%= link_to 'Destroy', booking_path(booking) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book this event!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@event, @booking] do |f| -%>
+          <%= f.submit %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-      </div>
+        </div>
+    </div>
   </div>
 </div>
