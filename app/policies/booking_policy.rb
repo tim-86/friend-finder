@@ -5,16 +5,12 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    @user == @record.user || @user.admin
-  end
-
   def new?
-    @user == @record.user || @user.admin
+    create?
   end
 
   def create?
-    @user == @record.user || @user.admin
+    true
   end
 
   def destroy?
