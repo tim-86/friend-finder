@@ -14,7 +14,6 @@
 
 .navbar-light .navbar-nav .nav-link.nav-link-custom {
   color: white;
-  font-weight: bold;
   margin-bottom: 4px;
   padding: 8px 0 4px 0;
 
@@ -26,6 +25,6 @@
 }
 
 .navbar-expand-sm .navbar-nav .nav-link.nav-link-custom:hover {
-    border-bottom: 1px solid white;
-    transition: 2s;
+    font-weight: 1000;
+    transition: 0.2s;
   }

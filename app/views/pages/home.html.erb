@@ -5,7 +5,7 @@
     <h1>Friend Finder</h1>
     <p id ="banner-second">Find meaningful connections</p>
     <%= link_to "Find your event", events_path, id: "btn-banner-red"%>
-    <%= link_to "Login", new_user_session_path, id: "btn-login"%>
+    <%= link_to "Login", new_user_session_path, id: "btn-login" if user_signed_in? == false%>
     <%= image_tag "people.svg", id: "banner-img" %>
   </div>
 </div>
