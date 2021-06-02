@@ -11,8 +11,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' unless params[:action] == "home"%>
+  <body id="body">
+    <%=render 'shared/navbar' if user_signed_in? && params[:action] == "home"%>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
