@@ -2,11 +2,12 @@
 
   <div class="card-profile">
     <div class="card-title">
-      <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80">
+      <div class="avatar" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)">
+      </div>
     </div>
     <div class="card-basic-info">
-      <h2> Joey </h2>
-      <h5>📍 New York</h5>
+      <h2> <%= current_user.first_name %> </h2>
+      <h5>📍 <%= current_user.location %></h5>
     </div>
     <div class="card-my-values">
       <h3>My Core Values</h3>
@@ -27,7 +28,7 @@
     </div>
     <div class="card-interest">
       <h3>My Interests</h3>
-      <p>🍱🏄‍♀️🎬</p>
+      <h1>🐣 🦆 🥪</h1>
     </div>
     <div class="card-more">
       <h3>Add More</h3>
@@ -38,13 +39,15 @@
   <h2>Booked Events</h2>
   <div class="card-bookings d-flex">
     <div class="card-event">
-      <h3> Booking 1 </h3>
+      <h3> <%= current_user.events[0].location %></h3>
+      <p>9th June 2021</p>
     </div>
     <div class="card-event">
-      <h3> Booking 2 </h3>
+      <h3><%= current_user.events[0].location %></h3>
+      <p>30th May 2021</p>
     </div>
     <div class="card-more-events">
-      <h3><%= link_to "Add More", events_path %></h3>
+      <h3>Add More</h3>
       <p>+</p>
     </div>
   </div>

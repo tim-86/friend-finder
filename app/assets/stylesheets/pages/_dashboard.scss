@@ -10,11 +10,12 @@
   border-radius: 5%;
 }
 
-.card-profile img {
-  height: 100%;
-  width: 30%;
+.avatar {
+  height: 260px;
+  width: 260px;
   border-radius: 50%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
   margin: 4px;
 }
 
@@ -77,6 +78,9 @@ h2 {
   border-radius: 5%;
   width: 30%;
   margin: 16px;
+  h1 {
+    text-align: center;
+  }
 }
 
 .card-more {
@@ -100,7 +104,7 @@ h2 {
     font-weight: bold;
   }
   h3 {
-    font-color: #5EAAA8;
+    color: #5EAAA8;
   }
 }
 
@@ -112,5 +116,5 @@ h2 {
 }
 
 .personality-test {
-  justify-content: center;
+  justify-content: left;
 }
