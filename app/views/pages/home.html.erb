@@ -13,16 +13,51 @@
 
 <!-- what is friend finder -->
 <div class="container">
-  <div class="row justify-content-around">
-    <div class="col-4">
-      <h2 id = "home-title">What is Friend Finder?</h2>
+  <div class="row justify-content-between" id="home-section">
+    <div class="col-5">
+      <h2>What is Friend Finder?</h2>
       <p class="text-justify home-text">A platform that offers you the chance to find your best friend by meeting 10 strangers in one evening. Connected via video speeddates that reveal all values of the participants.</p>
       <%= link_to "Find out more", new_user_session_path, id: "btn-home"%>
     </div>
     <div class="col-6" id = "home-img">
     </div>
   </div>
+
+  <!-- testimonials -->
+
+  <h2 id="testimonial-title">What do Others think about Friend Finder?</h2>
+  <div class="row justify-content-between testimonial-row">
+    <div class="col testimonial">
+      <div class="text-center">
+        <%= image_tag "Phoebe.jpeg", class: "rounded-circle testimonial-img" %>
+      </div>
+      <i class="fas fa-quote-right"></i>
+      <p class="text-justify">Oh, I wish I could, but I don't want to. Having that small talk phase is just really not my thing, I want a deeper connection! Friend Finder gave me exactly that, a group of people I finally feel close enough with to serenade. </p>
+      <p style="font-size: 20px" class="text-right"><strong>Phoebe, 27</strong></p>
+    </div>
+    <div class="col testimonial">
+      <div class="text-center">
+        <%= image_tag "Chandler.jpeg", class: "rounded-circle testimonial-img" %>
+      </div>
+      <i class="fas fa-quote-right"></i>
+      <p class="text-justify">Hi, I’m Chandler. I make jokes when I’m uncomfortable. That is why it isn’t always easy to get to know new people, but Friend Finder really helped me to get past the awkward stage of smalltalk and connect to people on a deeper level. And by knowing the other participants’ traits and how bad their laughs are like (#ScaredByJanice) before the speed dates definitely takes my social anxiety and I can prepare what I say to them.</p>
+      <p style="font-size: 20px" class="text-right"><strong>Chandler, 32</strong></p>
+    </div>
+    <div class="col testimonial">
+      <div class="text-center">
+        <%= image_tag "Ross.jpeg", class: "rounded-circle testimonial-img" %>
+      </div>
+      <i class="fas fa-quote-right"></i>
+      <p class="text-justify">Friend Finder is an incredible platform to connect with new people and make the character count! There is no other way I would have been able to find someone to talk to me instead of laughing about my fake tan and my very very very white teeth. Thank you Friend Finder, now I have someone to meet up for a coffee instead of sitting in Central Perk by myself like a loner. </p>
+      <p style="font-size: 20px" class="text-right"><strong>Ross, 32</strong></p>
+    </div>
+  </div>
 </div>
+
+
+
+
+
 
 
 
