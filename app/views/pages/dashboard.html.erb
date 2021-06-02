@@ -2,7 +2,7 @@
 
   <div class="card-profile">
     <div class="card-title">
-      <div class="avatar" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)">
+      <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)">
       </div>
     </div>
     <div class="card-basic-info">
@@ -43,7 +43,7 @@
       <p>9th June 2021</p>
     </div>
     <div class="card-event">
-      <h3><%= current_user.events[0].location %></h3>
+      <h3><%= link_to current_user.events[0].location, event_path(current_user.events[0]) %></h3>
       <p>30th May 2021</p>
     </div>
     <div class="card-more-events">
