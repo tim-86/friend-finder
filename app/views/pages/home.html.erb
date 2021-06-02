@@ -9,14 +9,19 @@
     <%= image_tag "people.svg", id: "banner-img" %>
   </div>
 </div>
-<!-- what is friend finder -->
 
-<div class="container d-flex">
-  <div>
-    <h2>What is Friend Finder?</h2>
-    <p>A platform that offers you the chance to find your bestfriend by meeting 20 strangers in one evening. Connected via video speed dates that reveal all values of the participants.</p>
+
+<!-- what is friend finder -->
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-4">
+      <h2 id = "home-title">What is Friend Finder?</h2>
+      <p class="text-justify home-text">A platform that offers you the chance to find your best friend by meeting 10 strangers in one evening. Connected via video speeddates that reveal all values of the participants.</p>
+      <%= link_to "Find out more", new_user_session_path, id: "btn-home"%>
+    </div>
+    <div class="col-6" id = "home-img">
+    </div>
   </div>
-  <%= image_tag "home.jpg"%>
 </div>
 
 

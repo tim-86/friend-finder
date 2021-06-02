@@ -2,6 +2,8 @@
   background-color: #5EAAA8;
   padding: 150px 0;
   height: 550px;
+  position: relative;
+  margin-bottom: 40px;
 }
 
 .banner h1 {
@@ -25,7 +27,7 @@
 
 #banner-img {
 position:absolute;
-right: 20px;
-top: 200px;
-width: 65%;
+right: 100px;
+top: 220px;
+width: 60%;
 }
