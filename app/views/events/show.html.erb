@@ -1,29 +1,64 @@
+<div class = "show-page-banner" style="background-image: url(<%= cl_image_path @event.photo.key %> )">
+<h1 class= "location-header"><%= @event.location %> </h1>
+</div>
 
-<h1>This will display an individual event with its users</h1>
+<div class = "container">
+<div class = "subheader">
+<h3>You took part in this event!</h3>
+<h5>Get in touch with your new friends</h5>
+</div>
+
+<%= @event.date %>
+
+
+<div class= "show-page-card-grid">
+  <% @event.users.each do |user| %>
+    <div class= "show-page-card">
+      <div class="left-side-show-page-card">
+        <div class= "show-page-card-image" style="background-image: url(<%= cl_image_path user.avatar.key %>)"></div>
+        <p><%= user.first_name %><p>
+      </div>
+      <div class= "right-side-show-page-card">
+        <ul class= "value-list">
+        <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
+        <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
+        <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+        </ul>
+        <a class="btn-red" href=""> Contact</a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
 
 <button id="show-button" type="button" class="btn btn-primary spacer" data-toggle="modal" data-target="#exampleModal">
   Book now
 </button>
-<% @event.bookings.each do |booking| %>
- <td><%= link_to 'Destroy', booking_path(booking) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Book this event!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for [@event, @booking] do |f| -%>
-        <%= f.submit %>
-        <% end %>
+  <% @event.bookings.each do |booking| %>
+  <td><%= link_to 'Destroy', booking_path(booking) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book this event!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@event, @booking] do |f| -%>
+          <%= f.submit %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-      </div>
+        </div>
+    </div>
   </div>
 </div>
