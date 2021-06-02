@@ -1,15 +1,28 @@
-<div class = container>
-<div class = "show-page-banner" style="background-image: url(<%= cl_image_path @event.photo %> )">
+<div class = "show-page-banner" style="background-image: url(<%= cl_image_path @event.photo.key %> )">
+<h1 class= "location-header"><%= @event.location %> </h1>
+</div>
+
+<div class = "container">
+<div class = "subheader">
+<h3>You took part in this event!</h3>
+<h5>Get in touch with your new friends</h5>
+</div>
+
+<%= @event.date %>
+
+<div></div>
 
 
 
 
-<% bookings= Booking.all %>
-<% bookings.each do |booking| %>
-<%= booking.user.email %>
-<%= booking.user.first_name %>
-<% end %>
-
+<div>
+  <% bookings= Booking.all %>
+  <%  %>
+  <% bookings.each do |booking| %>
+  <%= booking.user.email %>
+  <%= booking.user.first_name %>
+  <% end %>
+</div>
 
 
 
