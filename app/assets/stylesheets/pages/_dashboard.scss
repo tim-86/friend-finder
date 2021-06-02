@@ -1,22 +1,106 @@
 .card-profile {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 8px;
   background-color: #5EAAA8;
   margin-top: 24px;
   padding: 16px;
+  height: 300px;
+  width: 100%;
+  border-radius: 5%;
 }
 
 .card-profile img {
-  height: 56px;
-  width: 56px;
+  height: 100%;
+  width: 33%;
   border-radius: 50%;
   object-fit: cover;
-  margin: 16px;
+  margin: 4px;
 }
 
 .card-my-values {
   background-color: white;
   padding: 8px;
-  margin-right: 8px;
-  h3 {
-    color: #5EAAA8;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+  border-radius: 5%;
+
+  .fa-heart {
+    color: #F29191;
   }
+  h3 {
+    text-align: center;
+  }
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+}
+
+h3 {
+    color: #5EAAA8;
+    font-size: 24px;
+    padding: 8px;
+    text-align: center;
+  }
+
+h2 {
+  margin-top: 24px;
+}
+
+.card-about .card-bookings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  margin: 16px;
+  padding: 12px;
+}
+
+.card-personality {
+  border: 2px solid #5EAAA8;
+  border-radius: 5%;
+  width: 30%;
+  margin: 16px;
+}
+
+.card-interest {
+  border: 2px solid #5EAAA8;
+  border-radius: 5%;
+  width: 30%;
+  margin: 16px;
+}
+
+.card-more {
+  border: 2px solid #5EAAA8;
+  border-radius: 5%;
+  width: 30%;
+  margin: 16px;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.card-more-events {
+  border: 2px solid #5EAAA8;
+  border-radius: 5%;
+  width: 30%;
+  margin: 16px;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h3 {
+    font-color: #5EAAA8;
+  }
+}
+
+.card-event {
+  border: 2px solid #5EAAA8;
+  border-radius: 5%;
+  width: 30%;
+  margin: 16px;
 }
