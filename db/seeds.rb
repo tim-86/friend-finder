@@ -25,7 +25,7 @@ puts "creating some friends"
   email: "joey@friends.com",
   password: "123456",
   admin: true
-  )
+  ) 
   file = URI.open("https://i.guim.co.uk/img/media/ae14333615408ab5d5ba6c23810be683e0d6f631/389_282_1481_889/master/1481.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=fe8e04916fba748b25cc93727609a391")
   user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
   user.save!
