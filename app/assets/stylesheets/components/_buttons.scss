@@ -1,3 +1,24 @@
+// button red general
+
+.btn-red {
+  background-color: #F29191;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  border-radius: 2px;
+}
+
+.btn-red:hover {
+background-color: #fb8888;
+transition: 0.2s;
+text-decoration: none;
+color: white;
+}
+
+// button banner
+
 #btn-banner-red {
   padding: 25px 60px;
   background-color: #F29191;
