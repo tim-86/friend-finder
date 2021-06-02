@@ -10,19 +10,79 @@
 
 <%= @event.date %>
 
-<div></div>
-
-
-
 
 <div>
-  <% bookings= Booking.all %>
   <%  %>
-  <% bookings.each do |booking| %>
-  <%= booking.user.email %>
-  <%= booking.user.first_name %>
+  <% @event.users.each do |user| %>
+  <%= user.email %>
+  <%= user.first_name %>
   <% end %>
 </div>
+
+
+<div class= "show-page-card-grid">
+  <div class= "show-page-card">
+    <div class="left-side-show-page-card">
+      <img class= "show-page-card-image" <%= image_tag "Avatar.png" %> 
+      <p>Name, Age<p>
+    </div>
+    <div class= "right-side-show-page-card">
+      <ul class= "value-list">
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+      </ul>
+      <a class="btn-red" href=""> Contact</a>
+    </div>
+  </div>
+
+    <div class= "show-page-card">
+    <div class="left-side-show-page-card">
+      <img class= "show-page-card-image" <%= image_tag "Avatar.png" %> 
+      <p>Name, Age<p>
+    </div>
+    <div class= "right-side-show-page-card">
+      <ul class= "value-list">
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+      </ul>
+      <a class="btn-red" href=""> Contact</a>
+    </div>
+  </div>
+  
+     <div class= "show-page-card">
+    <div class="left-side-show-page-card">
+      <img class= "show-page-card-image" <%= image_tag "Avatar.png" %> 
+      <p>Name, Age<p>
+    </div>
+    <div class= "right-side-show-page-card">
+      <ul class= "value-list">
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+      </ul>
+      <a class="btn-red" href=""> Contact</a>
+    </div>
+  </div>
+   <div class= "show-page-card">
+    <div class="left-side-show-page-card">
+      <img class= "show-page-card-image" <%= image_tag "Avatar.png" %> 
+      <p>Name, Age<p>
+    </div>
+    <div class= "right-side-show-page-card">
+      <ul class= "value-list">
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
+      <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+      </ul>
+      <a class="btn-red" href=""> Contact</a>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 
