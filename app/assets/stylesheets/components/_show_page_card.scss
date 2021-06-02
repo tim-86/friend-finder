@@ -26,7 +26,12 @@
     }
     .show-page-card-image{
       height: 100px;
+      width:100px;
+      border-radius:50%;
       margin-bottom: 24px;
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
     }
     .value-list{
       list-style: none;
