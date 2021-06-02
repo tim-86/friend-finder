@@ -12,7 +12,7 @@
   </head>
 
   <body id="body">
-    <%=render 'shared/navbar' if user_signed_in? && params[:action] == "home"%>
+    <%=render 'shared/navbar' unless user_signed_in? == false && params[:action] == "home"%>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
