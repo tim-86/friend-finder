@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/dashboard', to: 'pages#dashboard'
 
-
+  get '/user_values/quiz', to: 'user_values#quiz'
   resources :user_values, only: [:new, :create]
   resources :values, only: [:index]
 
