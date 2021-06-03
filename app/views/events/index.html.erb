@@ -1,42 +1,28 @@
-<% @events.each do |event| %>
-<ul>
-<li><%= event.location %></li>
-<li><%= event.date %></li>
-<li><%= event.price %></li>
-<li><%= event.max_participants %></li>
-<li><%= event.description %></li>
-<li><%= event.video_link %></li>
-<li>There is also a photo attached, but adding it unstyled would be unwise!</li>
-<%= link_to 'Show', event %>
-
-</ul>
-<% end %>
-
-<%= link_to "Find your event", events_path, class: "btn-red"%>
 
 
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
+<div class = "show-page-banner" style="background-image: url(<%= cl_image_path @events[0].photo.key %> )">
+<h1 class= "location-header"><%= @events[0].location %> </h1>
+</div>
 
-
-<h1>test </h1>
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
+<h1 class="text-center">Events In Your Area</h1>
+<div class= "container">
+  <div class= "events-container">
+    <% @events.each do |event| %>
+      <div class= "event-card">
+        <% if event.date > DateTime.current %>
+          <p class= "event-card-date"><%= event.date.to_time.strftime('%B %e at %l:%M %p') %></p>
+        <% else %>
+          <p class= "event-card-date-passed"> Event lies in the past</p>
+        <% end %>
+        <p class= "event-card-description"><%= event.description %></p>
+        <% if event.users.count >= event.max_participants %>
+          <p class="event-card-status-booked">booked</p>
+        <% else %>
+            <p class = "event-card-status"><%= event.max_participants - event.users.count %> Spots left!</p>
+            <%= link_to "Show Event", event_path(event), class: "btn-red event-card-button" %>
+        <% end %>
+        <p class="event-card-price"><%= event.price %> €</p>
+      </div>
+    <% end %>
+  </div>
+</div>

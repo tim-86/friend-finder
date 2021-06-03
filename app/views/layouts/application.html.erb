@@ -12,10 +12,13 @@
   </head>
 
   <body id="body">
-    <%=render 'shared/navbar' unless user_signed_in? == false && params[:action] == "home"%>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
-    <%= render 'shared/footer' %>
+  <div class="page-container">
+      <%=render 'shared/navbar' unless user_signed_in? == false && params[:action] == "home"%>
+      <%= render 'shared/flashes' %>
+      <main id="main-content">
+        <%= yield %>
+      </main>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

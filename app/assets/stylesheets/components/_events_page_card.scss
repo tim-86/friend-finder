@@ -1,0 +1,63 @@
+.events-container {
+  margin-top: 48px;
+  padding: 8px;
+    .event-card {
+      display:flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      background-color: rgba(158, 204, 203, 0.8);
+      box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.4);
+      margin-bottom: 24px;
+      transition: 0.2s;
+      &:hover {
+        background-color:rgb(158, 204, 203);
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+    }
+    p {
+      padding:16px;
+      margin:0;
+      font-size: large;
+    }
+    .event-card-date{
+      width: 300px;
+    }
+    .event-card-date-passed{
+      color: grey;
+      width: 300px;
+    }
+    .event-card-description {
+      border-left: 3px solid grey;
+      width: 250px;
+    }
+    .event-card-status-booked{
+      border-left: 3px solid grey;
+      font-weight: bold;
+      color: red;
+      width: 350px;
+    }
+    .event-card-status{
+      border-left: 3px solid grey ;
+      width: 200px;
+
+    }
+    .event-card-price{
+      border-left: 3px solid grey;
+      font-weight: bold;
+      background-color: #F29191;
+      width: 100px;
+    }
+
+    .event-card-button{
+      padding: 8px 16px;
+      box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+      transition: 0.2s;
+      margin-right: 24px;
+      &:hover {
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        font-weight: bold
+      }
+    }
+    
+}
