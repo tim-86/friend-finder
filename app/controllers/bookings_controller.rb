@@ -14,13 +14,13 @@ class BookingsController < ApplicationController
     @booking.event = @event
     @booking.user = @user
     @booking.save
-    redirect_to event_path(@event), notice: "Your booking was succesfull!"
+    redirect_to dashboard_path, notice: "Your booking was succesfull!"
   end
 
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to root_path, notice: "Your booking was cancelled!"
+    redirect_to events_path, notice: "Your booking was cancelled!"
   end
 
   private
