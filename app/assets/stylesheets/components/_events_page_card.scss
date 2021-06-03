@@ -1,6 +1,4 @@
 .events-container {
-  display:flex;
-  flex-direction: column;
   margin-top: 48px;
   padding: 8px;
     .event-card {
@@ -30,7 +28,7 @@
     }
     .event-card-description {
       border-left: 3px solid grey;
-      width: 300px;
+      width: 250px;
     }
     .event-card-status-booked{
       border-left: 3px solid grey;

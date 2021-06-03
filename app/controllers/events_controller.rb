@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
+    location = current_user.location 
+    @events = @events.where(location: location).sort_by {|event| event.date}
   end
 
   def show
