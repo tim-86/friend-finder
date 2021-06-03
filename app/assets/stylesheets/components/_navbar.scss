@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #5EAAA8;
+  background: #6fb3b1;
+  // opacity: 0.9;
 
 }
 
@@ -28,3 +29,8 @@
     font-weight: 1000;
     transition: 0.2s;
   }
+
+#dropdown-custom {
+  border: none;
+  margin: 4px;
+}
