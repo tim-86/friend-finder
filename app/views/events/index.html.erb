@@ -1,42 +1,19 @@
-<% @events.each do |event| %>
-<ul>
-<li><%= event.location %></li>
-<li><%= event.date %></li>
-<li><%= event.price %></li>
-<li><%= event.max_participants %></li>
-<li><%= event.description %></li>
-<li><%= event.video_link %></li>
-<li>There is also a photo attached, but adding it unstyled would be unwise!</li>
-<%= link_to 'Show', event %>
+<% location = current_user.location %>
+<% events = Event.where(location: location) %>
 
-</ul>
-<% end %>
+<div class = "show-page-banner" style="background-image: url(<%= cl_image_path events[0].photo.key %> )">
+<h1 class= "location-header"><%= events[0].location %> </h1>
+</div>
 
-<%= link_to "Find your event", events_path, class: "btn-red"%>
+<div>
+  <% events.each do |event| %>
+  <p><%= event.date %></p>
+  <p><%= event.description %></p>
+  <% if  %>
+    <%= event.users.count >= event.max_participants %>
+    <p>booked</p>
+  <% else %>
+      <p><%= event.max_participants - event.user.count %></p>
+  <% end %>
+</div>
 
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-<h1>test </h1>
-
-
-<h1>test </h1>
