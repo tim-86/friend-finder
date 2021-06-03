@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    raise
     if current_user.update(user_params)
     else
       render :edit
