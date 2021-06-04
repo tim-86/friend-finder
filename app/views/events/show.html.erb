@@ -23,7 +23,7 @@
       <div class= "show-page-card">
         <div class="left-side-show-page-card">
           <div class= "show-page-card-image" style="background-image: url(<%= cl_image_path user.avatar.key %>)"></div>
-          <p><%= user.first_name %><p>
+          <p><%= user.first_name %>, <%= ((Time.zone.now - user.birthday.to_time) /1.year.seconds).floor %> <p>
         </div>
         <div class= "right-side-show-page-card">
           <ul class= "value-list">
