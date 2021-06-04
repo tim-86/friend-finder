@@ -39,6 +39,19 @@ event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'n
 event.save!
 puts "event created"
 
+puts "INTERMISSION... This one goes out to Hamburg!"
+event = Event.new(
+  location: "Hamburg",
+  date: "01/07/2021 20:00:00",
+  price: 19.99,
+  max_participants: 6,
+  description: "Classic Speed Friend Finding",
+  video_link: "www.google.de"
+)
+event.photo.attach(io: File.open('app/assets/images/Hamburg-besser.jpg'), filename: 'Hamburg.jpg')
+event.save!
+puts "Hamburg event created, let´s get back to Neeeeew York!"
+
 event = Event.new(
   location: "New York",
   date: "20/06/2021 20:00:00",
@@ -156,5 +169,49 @@ puts "creating some friends"
       user.save!
       puts "Brought #{user.first_name} to life"
 
-
       puts "Friends assembled"
+      puts "Time to do a little Hamburg-Crew"
+
+      user= User.new(
+      first_name: "Fynn",
+      last_name: "Kliemann",
+      location: "Hamburg",
+      email: "fynn@kliemann.com",
+      password: "123456",
+      birthday: "04 nov 1993",
+      admin: true
+      )
+      user.events << Event.third
+      file = URI.open("https://content1.promiflash.de/article-images/video_1080/fynn-kliemann-schaut-neutral.jpg")
+      user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      user.save!
+      puts "Brought #{user.first_name} to life"
+
+      user= User.new(
+      first_name: "Uwe",
+      last_name: "Seeler",
+      location: "Hamburg",
+      email: "Uwe@hsv.com",
+      password: "123456",
+      birthday: "01 nov 1936"
+      )
+      user.events << Event.third
+      file = URI.open("https://www.br.de/themen/sport/inhalt/fussball/uwe-seeler-118~_v-img__16__9__xl_-d31c35f8186ebeb80b0cd843a7c267a0e0c81647.jpg?version=08a41")
+      user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      user.save!
+      puts "Brought #{user.first_name} to life"
+
+      user= User.new(
+        first_name: "Angela",
+        last_name: "Merkel",
+        location: "Hamburg",
+        email: "Angie@kanzlerin.com",
+        password: "123456",
+        birthday: "04 nov 1966"
+        )
+        user.events << Event.third
+        file = URI.open("https://www.tagesspiegel.de/images/bundeskanzlerin-angela-merkel/27062726/1-format43.jpg")
+        user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+        user.save!
+        puts "Brought #{user.first_name} to life"
+        puts "Seeds finished.. well done..."
