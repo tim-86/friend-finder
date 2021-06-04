@@ -1,3 +1,10 @@
-<% current_user.values.each do |value| %>
-<%= value.name %>
+<%= simple_form_for @user_value, :url => user_values_quiz_path, :method => 'get' do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.association :value, as: :radio_buttons, collection: @array,  input_html: { class: "value-selector" }, item_wrapper_class: 'value-item' %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 <% end %>
