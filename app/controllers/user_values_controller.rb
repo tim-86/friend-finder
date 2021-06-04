@@ -18,7 +18,6 @@ class UserValuesController < ApplicationController
   def quiz
     @user_value = UserValue.new
     authorize @user_value
-    raise
 
   end
 
