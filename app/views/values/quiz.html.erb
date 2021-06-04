@@ -1,0 +1,54 @@
+<!-- @values
+
+# picks 10 values
+array = [1,2,3,4,5,6,7,8,9,10]
+
+array[0] array[1]
+array[0] array[2]
+...
+array[1] array[2]
+array [2] array [3]
+...
+array [2]
+
+# compares all values
+current_user
+
+results = []
+<% while i < array.length-1 do %>
+  <% i=0 %>
+  <% while j < array.length do %>
+    <% j = i + 1 %>
+    <% results << [array[i], array[j]] %>
+    <%  j += 1 %>
+  <% end %>
+ <% end %>
+ <% i += 1 %>
+<% end %>
+<% end %>
+
+
+
+# user values controller
+def index
+end
+
+create
+
+quiz
+
+
+
+ -->
+ <% @values.each do |value|%>
+<input type="checkbox" name='<%=value.name%>'  value='<%value.name%>' />
+<% end %>
+
+<!-- <div>
+  <input type="checkbox" id="scales" name="scales"
+         checked>
+  <label for="scales">Scales</label>
+</div>
+ -->
+
+

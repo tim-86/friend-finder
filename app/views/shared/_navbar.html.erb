@@ -21,7 +21,7 @@
           <%= link_to "Contact", "#", class: "nav-link nav-link-custom" %>
         </li>
         <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src='<%=cl_image_path current_user.avatar.key%>' />
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src='https://images.unsplash.com/photo-1564648351416-3eec9f3e85de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80' />
           <div class="dropdown-menu dropdown-menu-right"id="dropdown-custom" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, method: "delete", class: "dropdown-item" %>
