@@ -1,9 +1,10 @@
 const form = document.getElementById("quiz-form");
 
-const array = document.getElementsByClassName("value-item-quiz")
+const els = document.getElementsByClassName("value-item-quiz")
 
-for (const child of array.children) {
-  child.addEventListener("click", function () {
+Array.prototype.forEach.call(els, function(el) {
+  el.addEventListener("click", function () {
   form.submit();
 });
-}
+});
+

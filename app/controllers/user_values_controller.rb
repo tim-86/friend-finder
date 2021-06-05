@@ -43,7 +43,6 @@ class UserValuesController < ApplicationController
       user_value.save!
       current_user.values_combination.shift
       current_user.save!
-
       if current_user.values_combination.empty?
         redirect_to dashboard_path
       else
@@ -52,7 +51,6 @@ class UserValuesController < ApplicationController
     end
   end
 end
-
 
     # check params exist?
 
