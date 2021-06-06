@@ -1,10 +1,19 @@
-<%= simple_form_for @user_value, :url => user_values_quiz_path, :method => 'get' do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs">
-    <%= f.association :value, as: :radio_buttons, collection: @array,  input_html: { class: "value-selector" }, item_wrapper_class: 'value-item' %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="container">
+  <h5 id="value-test">Value Test - Step 2</h5>
+  <p>In this second step, please choose the value that is more important to you.</p>
+
+
+  <%= simple_form_for @user_value, html: {id:"quiz-form"}, :url => user_values_quiz_path, :method => 'get' do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs-quiz">
+      <%= f.association :value, as: :radio_buttons, label_method: lambda { |value| image_tag(cl_image_path value.photo.key) + content_tag(:h5, "#{value.name}", id:"h6-quiz") + content_tag(:p, "#{value.description}", id:"p-quiz" )}, :label => "Select one value", collection: @array,  input_html: { class: "value-selector-quiz" }, item_wrapper_class: 'value-item-quiz' %>
+    </div>
+<!--     <div class="form-actions">
+      <%= f.button :submit %>
+    </div> -->
+  <% end %>
+
+</div>
+
+<%= javascript_pack_tag 'quiz-form' %>

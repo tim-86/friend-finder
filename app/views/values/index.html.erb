@@ -1,10 +1,18 @@
-<%= simple_form_for @user_value, :method => 'post' do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs">
-    <%= f.association :value, as: :check_boxes,  input_html: { class: "value-selector" }, item_wrapper_class: 'value-item' %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="container">
+
+  <h2>Welcome to Friend Finder!</h2>
+  <p>We're happy that you decided to become part of the Friend Finder community. Before you can book your first event, please give us the chance to get to know you a little bit better. The following <strong>Value Test</strong> will find out what principles and values ar every important to you and your life.</p>
+  <h5>Value Test - Step 1</h5>
+  <p>In this first step, please select up to 10 values that are the most important to you.</p>
+
+  <%= simple_form_for @user_value, :method => 'post' do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.association :value, label_method: lambda { |value| image_tag(cl_image_path value.photo.key) + content_tag(:h6, "#{value.name}") + content_tag(:p, "#{value.description}")}, :label => "Select up to 10 values", as: :check_boxes,  input_html: { class: "value-selector" }, item_wrapper_class: 'value-item'%>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Continue", id: "btn-submit" %>
+    </div>
+  <% end %>
+</div>
