@@ -11,6 +11,7 @@ puts "destroying all records"
 
 User.destroy_all
 Event.destroy_all
+Value.destroy_all
 puts "done"
 
 puts "Creating new york events"

@@ -1,0 +1,30 @@
+=> [[32m#<Value:0x0000562ecd0d25f8[0m
+  id: [1;34m5[0m,
+  name: [31m[1;31m"[0m[31mHealth[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m23[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m23[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mwell-being, fitness, not being sick[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Value:0x00007f7fa81354a0[0m
+  id: [1;34m6[0m,
+  name: [31m[1;31m"[0m[31mDiscipline[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mobedience, self-control[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Value:0x00007f7fa81350e0[0m
+  id: [1;34m7[0m,
+  name: [31m[1;31m"[0m[31mJob Security[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m27[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m27[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mnot worrying about losing your job[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Value:0x00007f7fa8134eb0[0m
+  id: [1;34m8[0m,
+  name: [31m[1;31m"[0m[31mWealth[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mmoney, material goods, luxury lifestyle[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Value:0x00007f7fa8134c08[0m
+  id: [1;34m9[0m,
+  name: [31m[1;31m"[0m[31mFinancial-Stability[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m04[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m14[0m:[1;34m30[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mstable income, Financial freedom[1;31m"[0m[31m[0m[32m>[0m]

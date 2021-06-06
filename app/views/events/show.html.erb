@@ -2,7 +2,8 @@
 <h1 class= "location-header"><%= @event.location %> </h1>
 </div>
 
-<h2></h2> <%= current_user.core_values %>
+
+
  <div class = "container">
   <div class = "subheader">
     <% if @event.date < DateTime.current + 1 %>
@@ -28,9 +29,10 @@
         </div>
         <div class= "right-side-show-page-card">
           <ul class= "value-list">
-          <li class= "value-item"> <i class="fas fa-heart"></i>  Trust</li>
-          <li class= "value-item"> <i class="fas fa-heart"></i>  Openess</li>
-          <li class= "value-item"> <i class="fas fa-heart"></i>  Loyality</li>
+          <% user.core_values.each do |core| %>
+            <% value = Value.find(UserValue.find(core).value_id) %>
+            <li class= "value-item"><%= value.name %></p>
+          <% end %>
           </ul>
           <% if @event.date < DateTime.current + 1 %>
             <a class="btn-red" href=""> Contact</a>
