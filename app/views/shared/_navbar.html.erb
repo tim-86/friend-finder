@@ -18,10 +18,14 @@
           <%= link_to "Events", events_path, class: "nav-link nav-link-custom" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Contact", "#", class: "nav-link nav-link-custom" %>
+          <%= link_to "My Profile", dashboard_path, class: "nav-link nav-link-custom" %>
         </li>
         <li class="nav-item dropdown">
+          <% if current_user.avatar.attached? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= cl_image_path current_user.avatar.key %> />
+          <% else %>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"/>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right"id="dropdown-custom" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, method: "delete", class: "dropdown-item" %>
