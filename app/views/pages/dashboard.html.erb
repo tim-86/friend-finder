@@ -1,5 +1,10 @@
 <div class="container">
 
+<% current_user.core_values.each do |core| %>
+<% value = Value.find(UserValue.find(core).value_id) %>
+<%= value.name %>
+<% end %>
+
   <div class="card-profile">
     <div class="card-title">
       <% if current_user.avatar.attached? %>
@@ -15,9 +20,10 @@
     </div>
     <div class="card-my-values">
       <h3>My Core Values</h3>
-      <p><i class="fas fa-heart"></i> Trust</p>
-      <p><i class="fas fa-heart"></i> Loyalty</p>
-      <p><i class="fas fa-heart"></i> Openness</p>
+      <% current_user.core_values.each do |core| %>
+        <% value = Value.find(UserValue.find(core).value_id) %>
+        <p><%= value.name %></p>
+      <% end %>
     </div>
   </div>
 
