@@ -33,6 +33,9 @@
     <div class="card-interest">
       <h3>My Interests</h3>
       <h1>🐣 🦆 🥪</h1>
+      <% current_user.interests.each do |interest| %>
+       <p><%= interest.name %></p>
+       <% end %>
     </div>
     <div class="card-more">
       <h3>Add More</h3>
