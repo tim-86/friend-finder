@@ -4,6 +4,10 @@ class UserValuesController < ApplicationController
     authorize @uservalue
   end
 
+  
+
+
+
   def create
     hash = params[:user_value]
     array = hash[:value_id]
@@ -44,6 +48,12 @@ class UserValuesController < ApplicationController
       current_user.values_combination.shift
       current_user.save!
       if current_user.values_combination.empty?
+        values = current_user.user_values 
+        core_values = values.sort_by { |value| value[:counter]}.reverse!.slice(0,3)
+        core_values.each do |value|
+          current_user.core_values << value[:id]
+          current_user.save!
+        end
         redirect_to dashboard_path
       else
         redirect_to user_values_quiz_path
