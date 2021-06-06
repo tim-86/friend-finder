@@ -2,7 +2,8 @@
 <h1 class= "location-header"><%= @event.location %> </h1>
 </div>
 
-<div class = "container">
+<h2></h2> <%= current_user.core_values %>
+ <div class = "container">
   <div class = "subheader">
     <% if @event.date < DateTime.current + 1 %>
         <h1>You took part in this event!</h1>

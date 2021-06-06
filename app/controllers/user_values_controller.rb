@@ -4,6 +4,12 @@ class UserValuesController < ApplicationController
     authorize @uservalue
   end
 
+  def index
+    @user_values = policy_scope(UserValue)
+    @user_values = UserValue.all 
+    @core_values= @values_values.sort_by { |value| value[:counter]}.reverse!.slice(0,3)
+  end
+
   def create
     hash = params[:user_value]
     array = hash[:value_id]
