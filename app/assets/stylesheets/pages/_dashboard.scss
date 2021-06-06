@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 8px;
-  background-color: #5EAAA8;
+  background-color: #b1d6d5;
   margin-top: 24px;
   padding: 16px;
   height: 300px;
   width: 100%;
-  border-radius: 5%;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
 }
 
 .avatar-big {
@@ -25,7 +26,7 @@
   margin-top: 8px;
   margin-bottom: 16px;
   justify-content: center;
-  border-radius: 5%;
+  border-radius: 5px;
 
   .fa-heart {
     color: #F29191;
@@ -58,7 +59,7 @@ h2 {
 
 .card-personality {
   border: 2px solid #5EAAA8;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 30%;
   margin: 16px;
   img {
@@ -71,7 +72,7 @@ h2 {
 
 .card-interest {
   border: 2px solid #5EAAA8;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 30%;
   margin: 16px;
   h1 {
@@ -81,7 +82,7 @@ h2 {
 
 .card-more {
   border: 2px solid #5EAAA8;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 30%;
   margin: 16px;
   p {
@@ -92,7 +93,7 @@ h2 {
 
 .card-more-events {
   border: 2px solid #5EAAA8;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 30%;
   margin: 16px;
   p {
@@ -106,7 +107,7 @@ h2 {
 
 .card-event {
   border: 2px solid #5EAAA8;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 30%;
   margin: 16px;
 }
