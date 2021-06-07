@@ -25,7 +25,7 @@ class UserValuesController < ApplicationController
     end
     current_user.values_combination = temp.combination(2).to_a
     current_user.save!
-    authorize @uservalue
+    authorize @user_value
     redirect_to user_values_quiz_path
   end
 
