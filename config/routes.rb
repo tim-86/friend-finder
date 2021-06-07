@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/user_values/quiz', to: 'user_values#quiz'
   resources :user_values, only: [:new, :create]
   resources :values, only: [:index]
+  resources :user_interests, only: [:new, :create]
+  resources :interests, only: [:index]
 
   resources :events, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:create]

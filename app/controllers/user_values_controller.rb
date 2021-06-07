@@ -25,7 +25,7 @@ class UserValuesController < ApplicationController
     end
     current_user.values_combination = temp.combination(2).to_a
     current_user.save!
-    authorize @user_value
+    authorize @uservalue
     redirect_to user_values_quiz_path
   end
 
@@ -58,9 +58,9 @@ class UserValuesController < ApplicationController
       else
         redirect_to user_values_quiz_path
       end
-    end
+    end 
   end
-end
+end 
 
     # check params exist?
 
