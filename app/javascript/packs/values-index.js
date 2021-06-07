@@ -10,6 +10,7 @@
     function CheckBoxCount() {
         var inputList = document.getElementsByTagName("input");
         var numChecked = 0;
+        console.log("hallo")
 
         for (var i = 0; i < inputList.length; i++) {
             if (inputList[i].type == "checkbox" && inputList[i].checked) {
