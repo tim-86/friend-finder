@@ -226,11 +226,11 @@ puts "creating some friends"
 puts "creating your personality"
 
 
-  certainty= Value.new(
+  certainty = Value.new(
   name: "Certainty",
   description: "stability, orderliness, predictability",
   )
-  url_certainty = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1622808868/Target_cptkyc.jpg'
+  url_certainty = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623009149/waldlichtung-7628d29d-8355-4f2d-b095-8d5be9b320e9_lygoqi.jpg'
   filename = File.basename(URI.parse(url_certainty).path)
   file = URI.open(url_certainty)
   certainty.photo.attach(io: file, filename: filename)
@@ -458,7 +458,7 @@ security = Value.new(
   name: "Curiosity",
   description: "willingness to explore and learn",
   )
-  url_curiosity = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1622812613/curious-george2_kjdqmw.jpg'
+  url_curiosity = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623009273/spielen-pflanzen-forschen_i9lvdv.jpg'
   filename = File.basename(URI.parse(url_curiosity).path)
   file = URI.open(url_curiosity)
   curiosity.photo.attach(io: file, filename: filename)
@@ -554,13 +554,24 @@ security = Value.new(
   name: "Appreciation",
   description: "recognition of value or worth",
   )
-  url_appreciation = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1622812781/92946_sq31tc.jpg'
+  url_appreciation = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623011863/hands-raised-sun-dawn_gyuua5.jpg'
   filename = File.basename(URI.parse(url_appreciation).path)
   file = URI.open(url_appreciation)
   appreciation.photo.attach(io: file, filename: filename)
   appreciation.save!
   puts "appreciation is now available"
 
+
+  loyalty = Value.new(
+  name: "Loyalty",
+  description: "faithfulness",
+  )
+  url_loyalty = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623010603/family-patheos_six-reasons-wedding-rings-matter-think_ecpi8g.webp'
+  filename = File.basename(URI.parse(url_loyalty).path)
+  file = URI.open(url_loyalty)
+  loyalty.photo.attach(io: file, filename: filename)
+  loyalty.save!
+  puts "loyalty is now available"
 
   passion = Value.new(
   name: "Passion",
@@ -610,16 +621,40 @@ security = Value.new(
   puts "Spirituality is now available"
 
 
-  equality= Value.new(
+  equality = Value.new(
   name: "Equality",
   description: "equal right and opportunities for all",
   )
-  url_equality = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1622808535/bring-equality-justice-nonprofit-workplace_b8xy6t.jpg'
+  url_equality = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623009786/bring-equality-justice-nonprofit-workplace_np4p1y.jpg'
   filename = File.basename(URI.parse(url_equality).path)
-  file = URI.open(url_spirituality)
+  file = URI.open(url_equality)
   equality.photo.attach(io: file, filename: filename)
   equality.save!
   puts "Equality is now available"
+
+
+  ethics = Value.new(
+  name: "Ethics",
+  description: "moral behavior",
+  )
+  url_ethics = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623010272/g.foolcdn_anlc8b.jpg'
+  filename = File.basename(URI.parse(url_ethics).path)
+  file = URI.open(url_ethics)
+  ethics.photo.attach(io: file, filename: filename)
+  ethics.save!
+  puts "ethics is now available"
+
+
+  honesty = Value.new(
+  name: "Honesty",
+  description: "sincerity, frankness",
+  )
+  url_honesty = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623010607/parenting-gettyimages-693277562_gn7ugp.jpg'
+  filename = File.basename(URI.parse(url_honesty).path)
+  file = URI.open(url_honesty)
+  honesty.photo.attach(io: file, filename: filename)
+  honesty.save!
+  puts "honesty is now available"
 
 
 
