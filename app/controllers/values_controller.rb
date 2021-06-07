@@ -10,15 +10,13 @@ before_action :reset_values, only: [:index]
 
   def reset_values
     if current_user.user_values.exists?
-    current_user.values_combination = nil
-    current_user.core_values = nil
-    id = current_user.id
-    user_values =  UserValue.where(user_id: id)
-    user_values.delete_all
-
-    raise
-
-
+      current_user.values_combination = []
+      current_user.core_values = []
+      current_user.save!
+      id = current_user.id
+      user_values =  UserValue.where(user_id: id)
+      user_values.destroy_all
+    end
   end
 
 end

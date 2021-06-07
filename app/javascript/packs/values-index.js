@@ -16,8 +16,8 @@
                 numChecked = numChecked + 1;
             }
         }
-        if (numChecked < 1) {
-            alert("Please select at least 1 value"); return false;
+        if (numChecked < 4) {
+            alert("Please select at least 4 values"); return false;
         } else if (numChecked > 10) {
             alert("Please select no more than 10 values"); return false;
         }
