@@ -19,7 +19,7 @@
       <h5>📍 <%= current_user.location %></h5>
     </div>
     <div class="card-my-values">
-      <h3>My Core Values</h3>
+      <h3>My Core Values </h3>
       <% current_user.core_values.each do |core| %>
         <% value = Value.find(UserValue.find(core).value_id) %>
         <p><%= value.name %></p>
