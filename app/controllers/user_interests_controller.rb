@@ -1,8 +1,5 @@
 class UserInterestsController < ApplicationController
-  def new
-    @user_interest = UserInterest.new
-    authorize @userinterest
-  end
+  before_action :set_interest, only: [:edit, :update]
 
   def create
     hash = params[:user_interest]
@@ -16,6 +13,18 @@ class UserInterestsController < ApplicationController
       @user_interest.save
     end
     redirect_to dashboard_path
- 
+
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  private
+
+  def set_interest
+    @user_interest = UserInterest.find(params[:id])
   end
 end
