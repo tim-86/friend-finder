@@ -1,10 +1,10 @@
 
 
 <div class = "show-page-banner" style="background-image: url(<%= cl_image_path @events[0].photo.key %> )">
-<h1 class= "location-header"><%= @events[0].location %> </h1>
+<h1 class= "location-header"><%= @events[0].location.upcase %> </h1>
 </div>
 
-<h1 class="text-center">Events In Your Area</h1>
+<h2 id ="header-spacer" class="text-center">Upcoming Friend Finder Events In Your Area</h2>
 <div class= "container">
   <div class= "events-container">
     <% @events.each do |event| %>
