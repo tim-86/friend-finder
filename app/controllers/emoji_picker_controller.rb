@@ -1,0 +1,2 @@
+class EmojiPickerController < ApplicationController
+end

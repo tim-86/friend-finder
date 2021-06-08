@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :values, through: :user_values
   has_many :events, through: :bookings
   has_one_attached :avatar
-  has_many :user_interests
+  has_many :user_interests, dependent: :destroy
   has_many :interests, through: :user_interests
 
   def video_dates

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
-    location = current_user.location 
+    location = current_user.location
     @events = @events.where(location: location).sort_by {|event| event.date}
   end
 
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     authorize @event
     if @event.save
-      redirect_to events_path,  notice: 'Event was successfully created.'
+      redirect_to events_path, notice: 'Event was successfully created.'
     else
       render :new
     end

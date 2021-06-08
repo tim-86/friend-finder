@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
   end
-
-  
+ 
 
   def video_session
     @event = Event.find(params[:event_id])
@@ -29,6 +28,19 @@ class PagesController < ApplicationController
 
     twilio = TwilioService.new
     @video_call_token = twilio.generate_token(current_user, @friend)
+  end
+
+
+  def dashboard
+    @interests = []
+    3.times do |index|
+      user_interest = current_user.user_interests.where(index: index).first
+      if user_interest
+        @interests[index] = user_interest.interest.name
+      else
+        @interests[index] = "?"
+      end
+    end
   end
 
 end
