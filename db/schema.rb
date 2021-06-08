@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_06_08_085702) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_085702) do
     t.string "video_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "booking_open", default: true
   end
 
   create_table "interests", force: :cascade do |t|
@@ -109,6 +112,18 @@ ActiveRecord::Schema.define(version: 2021_06_08_085702) do
     t.string "description"
   end
 
+  create_table "video_dates", force: :cascade do |t|
+    t.bigint "user1_id", null: false
+    t.bigint "user2_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "start_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_video_dates_on_event_id"
+    t.index ["user1_id"], name: "index_video_dates_on_user1_id"
+    t.index ["user2_id"], name: "index_video_dates_on_user2_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
@@ -116,4 +131,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_085702) do
   add_foreign_key "user_interests", "users"
   add_foreign_key "user_values", "\"values\"", column: "value_id"
   add_foreign_key "user_values", "users"
+  add_foreign_key "video_dates", "events"
+  add_foreign_key "video_dates", "users", column: "user1_id"
+  add_foreign_key "video_dates", "users", column: "user2_id"
 end

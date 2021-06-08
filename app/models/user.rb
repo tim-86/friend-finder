@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :user_interests, dependent: :destroy
   has_many :interests, through: :user_interests
+
+  def video_dates
+    VideoDate.where(user1: self).or(VideoDate.where(user2: self))
+  end
 end
