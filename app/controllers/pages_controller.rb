@@ -3,14 +3,26 @@ class PagesController < ApplicationController
 
   def home
   end
- 
+
 
   def video_session
     @event = Event.find(params[:event_id])
-    set_video_date 
+    set_video_date
     if @video_date
       @friend = @video_date.other_user(current_user)
       setup_video_call_token
+    end
+  end
+
+  def dashboard
+    @interests = []
+    3.times do |index|
+      user_interest = current_user.user_interests.where(index: index).first
+      if user_interest
+        @interests[index] = user_interest.interest.name
+      else
+        @interests[index] = "?"
+      end
     end
   end
 
@@ -30,17 +42,5 @@ class PagesController < ApplicationController
     @video_call_token = twilio.generate_token(current_user, @friend)
   end
 
-
-  def dashboard
-    @interests = []
-    3.times do |index|
-      user_interest = current_user.user_interests.where(index: index).first
-      if user_interest
-        @interests[index] = user_interest.interest.name
-      else
-        @interests[index] = "?"
-      end
-    end
-  end
 
 end
