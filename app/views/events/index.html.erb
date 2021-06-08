@@ -1,28 +1,40 @@
-
-
 <div class = "show-page-banner" style="background-image: url(<%= cl_image_path @events[0].photo.key %> )">
 <h1 class= "location-header"><%= @events[0].location.upcase %> </h1>
 </div>
 
-<h2 id ="header-spacer" class="text-center">Upcoming Friend Finder Events In Your Area</h2>
 <div class= "container">
+  <h2 id ="header-spacer">Upcoming Friend Finder Events In Your Area</h2>
   <div class= "events-container">
+
+
     <% @events.each do |event| %>
-      <div class= "event-card">
-        <% if event.date > DateTime.current %>
-          <p class= "event-card-date"><%= event.date.to_time.strftime('%B %e at %l:%M %p') %></p>
-        <% else %>
-          <p class= "event-card-date-passed"> Event lies in the past</p>
-        <% end %>
-        <p class= "event-card-description"><%= event.description %></p>
-        <% if event.users.count >= event.max_participants %>
-          <p class="event-card-status-booked">booked</p>
-        <% else %>
-            <p class = "event-card-status"><%= event.max_participants - event.users.count %> Spots left!</p>
-            <%= link_to "Show Event", event_path(event), class: "btn-red event-card-button" %>
-        <% end %>
-        <p class="event-card-price"><%= event.price %> €</p>
+
+      <% if event.date > DateTime.current %>
+       <div class= "event-card align-items-center">
+        <div class= "event-card-date">
+         <h3><%= event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
+        </div>
+         <div>
+           <p class= "event-card-description"><%= event.description %></p>
+           <div class = "d-flex align-items-center">
+             <i class="fas fa-user"></i>
+             <p class= "max-participants"><strong>max. <%= event.max_participants %></strong></p>
+           </div>
+
+         </div>
+         <div>
+         <p class="event-card-price"><%= event.price %> €</p>
+         <% if event.users.count >= event.max_participants %>
+           <p class="event-card-status-booked">Fully booked</p>
+         <% else %>
+           <p class = "event-card-status">
+            <%= event.max_participants - event.users.count %> Spots left!</p>
+<!--            <%= link_to "Show Event", event_path(event), class: "btn-red event-card-button" %>
+ -->         <% end %>
+         </div>
+
       </div>
     <% end %>
-  </div>
+  <% end %>
+ </div>
 </div>

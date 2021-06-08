@@ -4,14 +4,15 @@
   background-position: center;
   padding: 150px 0;
   position: relative;
+  margin-top: 80px;
 
   .location-header {
     position: absolute;
     right: 100px;
-    top: 40px;
+    top: -20px;
     color: rgb(94, 170, 168);
     font-weight: bolder;
-    font-size: 48px;
+    font-size: 60px;
   }
 }
 
