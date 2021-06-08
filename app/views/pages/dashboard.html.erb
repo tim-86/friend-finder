@@ -39,10 +39,12 @@
     <div class="card-interest">
       <h3>My Interests</h3>
       <div class="emoji-triggers d-flex">
-        <% 3.times do |index| %>
+        <% @interests.each_with_index do |interest, index| %>
           <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
-            <button class="emoji-trigger" data-interest-index="<%= index %>">Emoji</button>
-            <input type="hidden" value="" name="name" class="emoji-value-<%= index %>">
+            <button class="emoji-trigger" data-interest-index="<%= index %>">
+              <%= interest %>
+            </button>
+            <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
           <% end %>
         <% end %>
       </div>
