@@ -1,21 +1,21 @@
 class UserInterestsController < ApplicationController
-  def new
-    @user_interest = UserInterest.new
-    authorize @userinterest
-  end
+  def set
+    index = params[:index]
+    name = params[:name]
+    user_interests = current_user.user_interests
+    interest = Interest.find_by(name: name)
 
-  def create
-    hash = params[:user_interest]
-    array = hash[:interest_id]
-    array.shift
-    array.each do |interest_id|
-      @user_interest = UserInterest.new
-      authorize @user_interest
-      @user_interest.interest_id = interest_id
-      @user_interest.user = current_user
-      @user_interest.save
+    if user_interests.any? && user_interests.find_by(index: index)
+      user_interest = user_interests.find_by(index: index)
+      authorize user_interest
+      user_interest.update(interest: interest)
+    else
+      user_interest = UserInterest.new(interest: interest, index: index, user: current_user)
+      authorize user_interest
+      user_interest.save
     end
-    redirect_to dashboard_path
- 
+    respond_to do |format|
+      format.js
+    end
   end
 end
