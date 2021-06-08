@@ -198,7 +198,7 @@ security = Value.new(
   file = URI.open(url_accountability)
   accountability.photo.attach(io: file, filename: filename)
   accountability.save!
-  puts "accountability is now available"
+  puts "challenge is now available"
 
 
   adventure = Value.new(
@@ -537,7 +537,7 @@ puts "creating some friends"
 
 
 
-  user= User.new(
+  joey = User.new(
   first_name: "Joey",
   last_name: "Tribbiani",
   location: "New York",
@@ -546,29 +546,29 @@ puts "creating some friends"
   birthday: "04 Jun 1991",
   admin: true
   )
-  user.events << Event.last
-  user.events << Event.first
+  joey.events << Event.last
+  joey.events << Event.first
   file = URI.open("https://i.guim.co.uk/img/media/ae14333615408ab5d5ba6c23810be683e0d6f631/389_282_1481_889/master/1481.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=fe8e04916fba748b25cc93727609a391")
-  user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-  user.save!
-  puts "Brought #{user.first_name} to life"
+  joey.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  joey.save!
+  puts "Brought joey to life"
 
-  user= User.new(
+  ross= User.new(
   first_name: "Ross",
   last_name: "Geller",
   location: "New York",
   email: "ross@friends.com",
   password: "123456",
-  birthday: "10 apr 1989"
+  birthday: "10 Apr 1989"
   )
-  user.events << Event.last
+  ross.events << Event.last
   file = URI.open("https://static.wikia.nocookie.net/friends/images/3/35/Ross-geller.jpg/revision/latest?cb=20140306134540&path-prefix=de")
-  user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-  user.save!
-  puts "Brought #{user.first_name} to life"
+  ross.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  ross.save!
+  puts "Brought ross to life"
 
 
-  user= User.new(
+  phoebe= User.new(
   first_name: "Phoebe",
   last_name: "Buffay",
   location: "New York",
@@ -576,13 +576,13 @@ puts "creating some friends"
   password: "123456",
   birthday: "03 Aug 1992"
   )
-  user.events << Event.last
+  phoebe.events << Event.last
   file = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lisa-kudrow-friends-phoebe-buffay-1546435984.jpg?crop=1.00xw:0.410xh;0,0.0640xh&resize=1200:*")
-  user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-  user.save!
-  puts "Brought #{user.first_name} to life"
+  phoebe.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  phoebe.save!
+  puts "Brought phoebe to life"
 
-  user= User.new(
+  rachel= User.new(
     first_name: "Rachel",
     last_name: "Greene",
     location: "New York",
@@ -590,14 +590,14 @@ puts "creating some friends"
     password: "123456",
     birthday: "06 Sep 1992"
     )
-    user.events << Event.last
+    rachel.events << Event.last
     file = URI.open("https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1605&h=2140&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F06%2F24%2FGettyImages-138427199-2000.jpg")
-    user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-    user.save!
-    puts "Brought #{user.first_name} to life"
+    rachel.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+    rachel.save!
+    puts "Brought rachel to life"
 
 
-    user= User.new(
+    monica= User.new(
     first_name: "Monica",
     last_name: "Geller",
     location: "New York",
@@ -607,11 +607,11 @@ puts "creating some friends"
     )
     # user.events << Event.last
     file = URI.open("https://images.radio.com/aiu-media/GettyImages908315-74c6c800-ede5-4444-86fd-a46bc7cec688.jpg")
-    user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-    user.save!
-    puts "Brought #{user.first_name} to life"
+    monica.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+    monica.save!
+    puts "Brought monica to life"
 
-    user= User.new(
+    chandler = User.new(
       first_name: "Chandler",
       last_name: "Bing",
       location: "New York",
@@ -621,14 +621,14 @@ puts "creating some friends"
       )
       # user.events << Event.last
       file = URI.open("https://bilder.t-online.de/b/85/97/21/24/id_85972124/tid_da/matthew-perry-in-friends-spielte-er-chandler-bing-.jpg")
-      user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-      user.save!
-      puts "Brought #{user.first_name} to life"
+      chandler.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      chandler.save!
+      puts "Brought chandler to life"
 
       puts "Friends assembled"
       puts "Time to do a little Hamburg-Crew"
 
-      user= User.new(
+      fynn= User.new(
       first_name: "Fynn",
       last_name: "Kliemann",
       location: "Hamburg",
@@ -637,13 +637,13 @@ puts "creating some friends"
       birthday: "04 nov 1993",
       admin: true
       )
-      user.events << Event.third
+      fynn.events << Event.third
       file = URI.open("https://content1.promiflash.de/article-images/video_1080/fynn-kliemann-schaut-neutral.jpg")
-      user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-      user.save!
-      puts "Brought #{user.first_name} to life"
+      fynn.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      fynn.save!
+      puts "Brought fynn to life"
 
-      user= User.new(
+      uwe= User.new(
       first_name: "Uwe",
       last_name: "Seeler",
       location: "Hamburg",
@@ -651,13 +651,13 @@ puts "creating some friends"
       password: "123456",
       birthday: "01 nov 1936"
       )
-      user.events << Event.third
+      uwe.events << Event.third
       file = URI.open("https://www.br.de/themen/sport/inhalt/fussball/uwe-seeler-118~_v-img__16__9__xl_-d31c35f8186ebeb80b0cd843a7c267a0e0c81647.jpg?version=08a41")
-      user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-      user.save!
-      puts "Brought #{user.first_name} to life"
+      uwe.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      uwe.save!
+      puts "Brought uwe to life"
 
-      user= User.new(
+      angela= User.new(
         first_name: "Angela",
         last_name: "Merkel",
         location: "Hamburg",
@@ -665,14 +665,102 @@ puts "creating some friends"
         password: "123456",
         birthday: "04 nov 1966"
         )
-        user.events << Event.third
+        angela.events << Event.third
         file = URI.open("https://www.tagesspiegel.de/images/bundeskanzlerin-angela-merkel/27062726/1-format43.jpg")
-        user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-        user.save!
-        puts "Brought #{user.first_name} to life"
+        angela.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+        angela.save!
+        puts "Brought angela to life"
+
+
+
+UserValue.create!(user: joey, value: fame, counter: 5)
+joey.add_core_value(fame)
+UserValue.create!(user:joey, value: reputation, counter: 4)
+joey.add_core_value(reputation)
+UserValue.create!(user:joey, value: passion, counter: 3)
+joey.add_core_value(passion)
+joey.save!
+puts "joey has completed the value test!"
+
+UserValue.create!(user: ross, value: certainty, counter: 5)
+ross.add_core_value(certainty)
+UserValue.create!(user:ross, value: honesty, counter: 4)
+ross.add_core_value(honesty)
+UserValue.create!(user:ross, value: appreciation, counter: 3)
+ross.add_core_value(appreciation)
+ross.save!
+puts "ross has completed the value test!"
+
+UserValue.create!(user: phoebe, value: spirituality, counter: 5)
+phoebe.add_core_value(spirituality)
+UserValue.create!(user:phoebe, value: excitement, counter: 4)
+phoebe.add_core_value(excitement)
+UserValue.create!(user:phoebe, value: passion, counter: 3)
+phoebe.add_core_value(passion)
+phoebe.save!
+puts "phoebe has completed the value test!"
+
+UserValue.create!(user: rachel, value: beauty, counter: 5)
+rachel.add_core_value(beauty)
+UserValue.create!(user:rachel, value: excitement, counter: 4)
+rachel.add_core_value(excitement)
+UserValue.create!(user:rachel, value: reputation, counter: 3)
+rachel.add_core_value(reputation)
+rachel.save!
+puts "rachel has completed the value test!"
+
+UserValue.create!(user: monica, value: spirituality, counter: 5)
+monica.add_core_value(spirituality)
+UserValue.create!(user:monica, value: excitement, counter: 4)
+monica.add_core_value(excitement)
+UserValue.create!(user:monica, value: passion, counter: 3)
+monica.add_core_value(passion)
+monica.save!
+puts "monica has completed the value test!"
+
+UserValue.create!(user: chandler, value: accountability, counter: 5)
+chandler.add_core_value(accountability)
+UserValue.create!(user:chandler, value: certainty, counter: 4)
+chandler.add_core_value(certainty)
+UserValue.create!(user:chandler, value: honesty, counter: 3)
+chandler.add_core_value(honesty)
+chandler.save!
+puts "chandler has completed the value test!"
+
+UserValue.create!(user: fynn, value: adventure, counter: 5)
+fynn.add_core_value(adventure)
+UserValue.create!(user:fynn, value: variety, counter: 4)
+fynn.add_core_value(variety)
+UserValue.create!(user:fynn, value: honesty, counter: 3)
+fynn.add_core_value(honesty)
+fynn.save!
+puts "fynn has completed the value test!"
+
+UserValue.create!(user: uwe, value: accountability, counter: 5)
+uwe.add_core_value(accountability)
+UserValue.create!(user:uwe, value: passion, counter: 4)
+uwe.add_core_value(passion)
+UserValue.create!(user:uwe, value: courage, counter: 3)
+uwe.add_core_value(courage)
+uwe.save!
+puts "uwe has completed the value test!"
+
+UserValue.create!(user: angela, value: accountability, counter: 5)
+angela.add_core_value(accountability)
+UserValue.create!(user:angela, value: respect, counter: 4)
+angela.add_core_value(respect)
+UserValue.create!(user:angela, value: independence, counter: 3)
+angela.add_core_value(independence)
+angela.save!
+puts "angie has completed the value test!"
+
+
+
         puts "Seeds finished.. well done..."
 
-
+# joey.add_core_value(fame)
+# ...
+# joey.save!
 
 
 
