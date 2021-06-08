@@ -2,7 +2,7 @@
   margin-top: 48px;
     .event-card {
       display:flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: flex-end;
       background-color: white;
       box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.4);
@@ -29,6 +29,7 @@
       height: 120px;
       border-right: 3px solid #5EAAA8;
       padding-top: 35px;
+      padding-right: 40px;
     }
     .event-card-date-passed{
       color: grey;
@@ -41,10 +42,15 @@
       font-weight: bold;
       color: red;
       width: 200px;
+      padding-top: 8px;
+
 
     }
     .event-card-status{
       width: 200px;
+      padding-top: 8px;
+      color: green;
+
 
     }
     .event-card-price{

@@ -15,7 +15,7 @@
          <h3><%= event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
         </div>
          <div>
-           <p class= "event-card-description"><%= event.description %></p>
+           <h6 class= "event-card-description"><%= event.description %></h6>
            <div class = "d-flex align-items-center">
              <i class="fas fa-user"></i>
              <p class= "max-participants"><strong>max. <%= event.max_participants %></strong></p>
