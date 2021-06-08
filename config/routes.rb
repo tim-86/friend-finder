@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
   patch "/users" ,to: "users#update"
-
+  resources :users, only: :show
 end

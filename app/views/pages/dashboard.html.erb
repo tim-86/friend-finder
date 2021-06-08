@@ -1,9 +1,5 @@
 <div class="container">
 
-<% current_user.core_values.each do |core| %>
-<% value = Value.find(UserValue.find(core).value_id) %>
-<%= value.name %>
-<% end %>
 
   <div class="card-profile">
     <div class="card-title">
@@ -55,16 +51,14 @@
   </div>
 
   <h2>Booked Events</h2>
+  <% current_user.events.each do |event| %>
   <div class="card-bookings d-flex">
     <div class="card-event">
- <h3> <%= current_user.events[0].location %></h3>
-      <p>9th June 2021</p>
-</div>
-    <div class="card-event">
-      <h3><%= link_to current_user.events[0].location, event_path(current_user.events[0]) %></h3>
-      <p>30th May 2021</p>
+      <h3><%= link_to event.location, event_path(event) %></h3>
+      <p><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></p>
     </div>
-    <div class="card-more-events">
+    <% end %>
+      <div class="card-more-events">
       <h3>Add More</h3>
       <p>+</p>
     </div>
