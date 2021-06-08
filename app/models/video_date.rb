@@ -16,4 +16,14 @@ class VideoDate < ApplicationRecord
     end
   end
 
+  def other_user(user)
+    if user1 == user
+      user2
+    elsif user2 == user
+      user1
+    else
+      raise ArgumentError, "Not a Member of this Date"
+    end
+  end
+
 end

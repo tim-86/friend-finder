@@ -28,17 +28,12 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { setupVideoCall } from '../components/video_call';
+import { setupVideoDates } from '../components/video_dates';
 
 document.addEventListener('turbolinks:load', () => {
-  const startCallButton = document.querySelector(".btn-start-call")
-  if (startCallButton) {
-    startCallButton.addEventListener("click", (event) => {
-      setTimeout(function () {
-        location.reload();
-    }, 32000);
-    })
-  }
+ 
   // Call your functions here, e.g:
   // initSelect2();
   setupVideoCall();
+  setupVideoDates();
 });
