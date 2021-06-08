@@ -1,0 +1,6 @@
+<% if @video_date %>
+  <%= render "shared/video_chat", video_call_token: @video_call_token, friend: @friend, video_date: @video_date %>
+<% else %>
+  <h2>Sorry, there is no video-date for you at this time</h2>
+<% end %>
+

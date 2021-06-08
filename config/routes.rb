@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/user_interests/:index", to: "user_interests#set", as: "user_interest_set"
 
   resources :events, only: [:index, :new, :create, :show] do
+    get '/video_session', to: 'pages#video_session'
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:destroy]
