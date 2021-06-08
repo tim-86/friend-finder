@@ -1,26 +1,39 @@
 <div class="container">
-  <h1><%= @user.first_name %></h1>
-
-  <div class="video-call">
-    <div id="video-call-token" data-video-call-token="<%= JSON.generate(@video_call_token) %>"></div>
-    <div class="call-video-views">
-      <div id="remote-video">
-        <div class="no-call">
-          No call in progress. Click 'Call' to connect!
+  <h1 class= "text-center">Say "Hi" to <%= @user.first_name %></h1>
+  <div class ="row">
+    <div class ="user-information col-4">
+      <div class= "video-chat-image" style="background-image: url(<%= cl_image_path @user.avatar.key %>)"></div>
+        <p><%= @user.first_name %>, <%= ((Time.zone.now - @user.birthday.to_time) /1.year.seconds).floor %> <p>
+        <div> <% @user.core_values.each do |core| %>
+            <% value = Value.find(UserValue.find(core).value_id) %>
+            <li class= "value-item"><%= value.name %></p>
+          <% end %></div>
         </div>
-        <div class="waiting-for-buddy hidden">
-          Waiting for <%= @user.first_name %> to join...
+    <div class="video-call col-7">
+      <div id="video-call-token" data-video-call-token="<%= JSON.generate(@video_call_token) %>"></div>
+      <div class="call-video-views">
+        <div id="remote-video">
+          <div class="no-call">
+            No call in progress. Click 'Call' to connect!
+          </div>
+          <div class="waiting-for-buddy hidden">
+            Waiting for <%= @user.first_name %> to join...
+          </div>
         </div>
+        <div id="local-video"></div>
       </div>
-      <div id="local-video"></div>
-    </div>
-    <div class="call-buttons">
-      <%= link_to '#', class: 'call-button btn-start-call' do %>
-        <i class="fas fa-phone"></i> Call
-      <% end %>
-      <%= link_to '#', class: 'call-button btn-end-call' do %>
-        <i class="fas fa-phone-slash"></i> End
-      <% end %>
+      <div class="call-buttons">
+        <%= link_to '#', class: 'call-button btn-start-call' do %>
+          <i class="fas fa-phone"></i> Call
+        <% end %>
+        <%= link_to '#', class: 'call-button btn-end-call' do %>
+          <i class="fas fa-phone-slash"></i> End
+        <% end %>
+      </div>
     </div>
   </div>
+  <h2>hello</h2>
 </div>
+
+
+

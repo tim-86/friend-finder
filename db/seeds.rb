@@ -9,6 +9,7 @@ require "open-uri"
 
 puts "destroying all records"
 
+VideoDate.destroy_all
 User.destroy_all
 Event.destroy_all
 Value.destroy_all

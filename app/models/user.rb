@@ -12,8 +12,13 @@ class User < ApplicationRecord
   has_many :user_interests, dependent: :destroy
   has_many :interests, through: :user_interests
 
+
   def add_core_value(value)
     user_value = UserValue.find_by(user: self, value: value)
     core_values << user_value.id unless user_value.nil?
+  end
+
+  def video_dates
+    VideoDate.where(user1: self).or(VideoDate.where(user2: self))
   end
 end
