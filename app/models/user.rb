@@ -11,4 +11,9 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :user_interests, dependent: :destroy
   has_many :interests, through: :user_interests
+
+  def add_core_value(value)
+    user_value = UserValue.find_by(user: self, value: value)
+    core_values << user_value.id unless user_value.nil?
+  end
 end
