@@ -604,7 +604,7 @@ puts "creating some friends"
     password: "123456",
     birthday: "25 Dec 1988"
     )
-    user.events << Event.last
+    # user.events << Event.last
     file = URI.open("https://images.radio.com/aiu-media/GettyImages908315-74c6c800-ede5-4444-86fd-a46bc7cec688.jpg")
     user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
     user.save!
@@ -618,7 +618,7 @@ puts "creating some friends"
       password: "123456",
       birthday: "04 nov 1993"
       )
-      user.events << Event.last
+      # user.events << Event.last
       file = URI.open("https://bilder.t-online.de/b/85/97/21/24/id_85972124/tid_da/matthew-perry-in-friends-spielte-er-chandler-bing-.jpg")
       user.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
       user.save!
