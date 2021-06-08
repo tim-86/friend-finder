@@ -11,4 +11,8 @@ class UserInterestPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def set?
+    record.user == user
+  end
 end
