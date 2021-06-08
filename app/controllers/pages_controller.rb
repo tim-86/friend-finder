@@ -30,7 +30,7 @@ class PagesController < ApplicationController
 
   def set_video_date
     @video_date = @event.video_dates.where("user1_id = :user_id OR user2_id = :user_id", user_id: current_user.id).where(
-      "start_time >= ? AND start_time <= ?", DateTime.current, DateTime.current + Event.duration.seconds
+      "start_time >= ? AND start_time <= ?", DateTime.now, DateTime.now + Event.duration.seconds
     ).first
   end
 

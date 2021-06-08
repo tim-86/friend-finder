@@ -9,6 +9,15 @@
         <div class="waiting-for-buddy hidden">
           Waiting for your friend to join...
         </div>
+        <div class="on-screen-friend-info">
+          <ul class= "friend-value-list">
+          <li class= "friend-value-list-item"><%= friend.first_name %>´s Values:</li>
+            <% friend.core_values.each do |core| %>
+              <% value = Value.find(UserValue.find(core).value_id) %>
+              <li class="friend-value-list-item"><%= value.name %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
       <div id="local-video"></div>
     </div>

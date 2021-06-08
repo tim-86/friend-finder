@@ -78,3 +78,27 @@
 .video-frame {
   display:flex;
 }
+
+.on-screen-friend-info {
+  color: rgb(112, 179, 177);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 20px;
+  transition: 1s;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.friend-value-list{
+  list-style: none;
+  border: 1px solid rgb(242, 145, 145);
+  padding: 0;
+
+}
+.friend-value-list-item{
+  display: inline;
+  font-weight:bold;
+  margin-left: 2px;
+  margin-right: 4px;
+}
