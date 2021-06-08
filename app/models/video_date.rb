@@ -4,7 +4,7 @@ class VideoDate < ApplicationRecord
   belongs_to :event
 
   validates :start_time, presence: true
-  validate :user_combination_must_be_unique
+  #validate :user_combination_must_be_unique
 
   def user_combination_must_be_unique
     # user 1 and user 2 or user 1 and user 2 can not happen

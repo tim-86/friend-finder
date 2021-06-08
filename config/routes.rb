@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :interests, only: [:index]
 
   resources :events, only: [:index, :new, :create, :show] do
+    get '/video_session', to: 'pages#video_session'
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:destroy]

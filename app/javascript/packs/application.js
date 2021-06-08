@@ -30,6 +30,14 @@ import "bootstrap";
 import { setupVideoCall } from '../components/video_call';
 
 document.addEventListener('turbolinks:load', () => {
+  const startCallButton = document.querySelector(".btn-start-call")
+  if (startCallButton) {
+    startCallButton.addEventListener("click", (event) => {
+      setTimeout(function () {
+        location.reload();
+    }, 32000);
+    })
+  }
   // Call your functions here, e.g:
   // initSelect2();
   setupVideoCall();

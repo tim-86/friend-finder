@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  DURATION = 30
   has_many :bookings
   has_many :users, through: :bookings
   has_one_attached :photo
@@ -12,7 +13,65 @@ class Event < ApplicationRecord
   validates :video_link, presence: true
 
   def close_booking
-    # we want to prohibit new bookings and then create all video_dates with that terrible combination!
-    # add a new column booking_open (true/false)
+    booking_open = false
+    # combination logic
+    combinations = round_robin(users)
+    generations = []
+
+    generations << [combinations[0], combinations[1]]
+    generations << [combinations[2], combinations[3]]
+    generations << [combinations[4], combinations[5]]
+
+    generations.each_with_index do |generation, index|
+      generation.each do |combination|
+        event_time = self.date
+        new_event_time = event_time + Event::DURATION * index.seconds
+        VideoDate.create(user1: combination[0], user2: combination[1], start_time: new_event_time, event: self)
+      end
+    end
+
+    save
+
+  end
+
+  def round_robin(list, pairs = [])
+ 
+    length = list.length
+    halfway = (length / 2.0).ceil
+    first_half = list[0..halfway - 1]
+    second_half = list[halfway..]
+  
+  
+    if length <= 2
+  
+      first = first_half[0]
+      second = second_half[0] || ''
+      pairs << [first, second] unless first == second
+  
+      return pairs
+    else
+      halfway.times do
+        second_halves_used = []
+        first_half.each do |first|
+          found_second = false
+          second_half.each do |second|
+            next if second_halves_used.include?(second)
+            next if pairs.any? { |pair| (pair[0] == first && pair[1] == second) || (pair[1] == first && pair[0] == second) }
+  
+            # second_half.delete(second)
+            found_second = true
+            pairs << [first, second]
+            second_halves_used << second
+            break
+          end
+          unless found_second
+            pairs << [first, '']
+          end
+        end
+      end
+      pairs = round_robin(first_half, pairs)
+      pairs = round_robin(second_half, pairs)
+      return pairs
+    end
   end
 end

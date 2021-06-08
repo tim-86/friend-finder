@@ -46,6 +46,7 @@ class EventsController < ApplicationController
     redirect_to events_path, notice: 'Event was successfully destroyed'
   end
 
+
 #   def event_video_call
 #     #at the moment video-chat can start when each user looks at the other users show page
 # #user_path(array[0])
