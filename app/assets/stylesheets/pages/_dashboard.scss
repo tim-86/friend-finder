@@ -227,11 +227,9 @@ margin-top: 40px;
  margin: 0px;
 }
 
-input,
-button,
-select,
-optgroup,
-textarea {
+
+#emoji-trigger-button
+{
 
 width: 60px;
 height: 60px;
@@ -239,10 +237,7 @@ margin-top: 35px;
 
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+#emoji-trigger-button {
   font-size: 40px;
 }
 
