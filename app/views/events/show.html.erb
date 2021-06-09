@@ -45,14 +45,19 @@
           <% end %>
           </ul>
           <% if @event.date < DateTime.current + 1 %>
-            <a class="btn-red d-flex justify-content-center" href=""> Contact</a>
+          <%# <a class="btn-red d-flex justify-content-center" href=""> Contact</a> %>
           <% else %>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
-  <div id="booking-button">
-    <%=link_to "Start your Event", event_video_session_path(@event), id: "btn-banner-red"%>
+  <% if @event.booking_open %>
+    <div class="start-event-button">
+    <%=link_to "Book this Event", event_video_session_path(@event), id: "btn-banner-red"%>
+    <% else %>
+      <div class="start-event-button">
+      <%=link_to "Start Your Event", event_video_session_path(@event), id: "btn-banner-red"%>
+    <% end %>
 </div>
 </div>
