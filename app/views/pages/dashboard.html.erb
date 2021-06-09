@@ -39,7 +39,7 @@
       <div class = "inner-box">
         <h3>Personality Type</h3>
       </div>
-      <h1>ESFP-A</h1>
+      <h1 id="perso">ESFP-A</h1>
     </div>
     <div class="col col-interests" id = "interests">
       <div class = "inner-box">
@@ -59,6 +59,9 @@
       <div class = "inner-box">
         <h3>Bio</h3>
       </div>
+      <div>
+        <p id="bio-text">Hey guys! I am a washreal German who recently moved to New York to live the American Dream.</p>
+      </div>
     </div>
   </div>
 
@@ -66,50 +69,52 @@
 
   <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
   <div class="row justify-content-center row-interests">
- <% current_user.events.each do |event| %>
-    <div class="col col-interests" id = "personailty-type">
-      <div class = "inner-box">
-        <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
-      </div>
-      <h1>ESFP-A</h1>
-    </div>
+    <% current_user.events.each do |event| %>
+      <% if event.date > DateTime.current %>
+
+        <div class="col col-interests">
+          <%= link_to event_path(event) do %>
+        <div class = "inner-box">
+          <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
+        </div>
+         <div>
+           <%= image_tag "people.svg", class: "event-img" %>
+           <% if event.users.count > 1 %>
+             <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
+           <% else%>
+             <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
+           <% end %>
+         </div>
+
+        </div>
+        <% end %>
     <% end %>
-
-
+    <% end %>
   </div>
 
 
-<% current_user.events.each do |event| %>
-  <div class="card-bookings d-flex">
-    <div class="card-event">
-      <h3><%= link_to event.location, event_path(event) %></h3>
-      <p><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></p>
-    </div>
-    <% end %>
-      <div class="card-more-events">
-      <h3>Add More</h3>
-      <p>+</p>
-    </div>
-  </div>
-<!--   past events -->
-
- <!--  <h2 class="dashboard-row-headers">Your past Events...</h2>
+  <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
   <div class="row justify-content-center row-interests">
-    <div class="col col-interests" id = "personailty-type">
-      <div class = "inner-box">
-        <h3>Personality Type</h3>
-      </div>
-      <h1>ESFP-A</h1>
-    </div>
-    <div class="col col-interests" id = "interests">
-      <div class = "inner-box">
-        <h3>Interests</h3>
-      </div>
-    </div>
-    <div class="col col-interests" id = "bio">
-      <div class = "inner-box">
-        <h3>Bio</h3>
-      </div>
-    </div>
-  </div> -->
+    <% current_user.events.each do |event| %>
+      <% if event.date < DateTime.current %>
+
+        <div class="col col-interests">
+          <%= link_to event_path(event) do %>
+        <div class = "inner-box">
+          <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
+        </div>
+         <div>
+           <%= image_tag "people.svg", class: "event-img" %>
+           <% if event.users.count > 1 %>
+             <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
+           <% else%>
+             <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
+           <% end %>
+         </div>
+
+        </div>
+        <% end %>
+    <% end %>
+    <% end %>
+  </div>
 
