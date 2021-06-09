@@ -1,68 +1,84 @@
+
+
 <div class="container">
 
+<!--   profile card  -->
 
-  <div class="card-profile">
-    <div class="card-title">
+  <div class="row" id = "profile-card-dashboard">
+    <div class="col-sm" id = "profile-left">
       <% if current_user.avatar.attached? %>
-      <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)">
+        <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)"></div>
       <% else %>
-      <div class="avatar-big" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')">
+        <div class="avatar-big" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"></div>
       <% end %>
-      </div>
     </div>
-    <div class="card-basic-info">
-      <h2> <%= current_user.first_name %> </h2>
+    <div class="col-sm" id = "profile-middle">
+      <h2><%= current_user.first_name %>, <%= ((Time.zone.now - current_user.birthday.to_time) /1.year.seconds).floor %></h2>
       <h5>📍 <%= current_user.location %></h5>
+      <%= link_to "Find event", events_path, class: "btn-red event-card-button", id: "dashboard-event-button" %>
     </div>
-    <div class="card-my-values">
+    <div class="col-3" id = "profile-right">
       <h3>My Core Values </h3>
-      <% current_user.core_values.each do |core| %>
-        <% value = Value.find(UserValue.find(core).value_id) %>
-        <p><%= value.name %></p>
-      <% end %>
-    </div>
-  </div>
-
-  <h2>About Me...</h2>
-  <div class="card-about d-flex">
-    <div class="card-personality">
-      <h3>My Personality</h3>
-      <div class="personality-test d-flex">
-        <img src="https://i.pinimg.com/originals/52/29/8d/52298d48c02c395a6039b85fad91228d.png">
-        <h5>ESFP-A</h5>
-      </div>
-    </div>
-    <div class="card-interest">
-      <h3>My Interests</h3>
-      <div class="emoji-triggers d-flex">
-        <% @interests.each_with_index do |interest, index| %>
-          <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
-            <button class="emoji-trigger" data-interest-index="<%= index %>">
-              <%= interest %>
-            </button>
-            <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
-          <% end %>
+      <ul class= "value-list" id="value-list-dashboard">
+        <% current_user.core_values.each do |core| %>
+          <% value = Value.find(UserValue.find(core).value_id) %>
+          <div class="value-item-heart">
+            <i class="fas fa-heart"></i><li class= "value-item"><%= value.name %></li>
+          </div>
         <% end %>
+      </ul>
+      <%= link_to "Take value test", values_path, class: "btn-red event-card-button d-flex justify-content-center", id: "dashboard-value-button" %>
+    </div>
+  </div>
+
+<!--   profile details -->
+
+  <h2 class="dashboard-row-headers">About me...</h2>
+  <div class="row justify-content-center row-interests">
+    <div class="col col-interests" id = "personailty-type">
+      <div class = "inner-box">
+        <h3>Personality Type</h3>
+      </div>
+      <h1>ESFP-A</h1>
+    </div>
+    <div class="col col-interests" id = "interests">
+      <div class = "inner-box">
+        <h3>Interests</h3>
+      </div>
+        <div class="emoji-triggers d-flex">
+          <% @interests.each_with_index do |interest, index| %>
+            <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
+              <button class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
+              <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
+            <% end %>
+          <% end %>
+        </div>
+
+    </div>
+    <div class="col col-interests" id = "bio">
+      <div class = "inner-box">
+        <h3>Bio</h3>
       </div>
     </div>
-    <div class="card-more">
-      <h3>Add More</h3>
-      <p>+</p>
   </div>
 
-  <h2>Booked Events</h2>
-  <% current_user.events.each do |event| %>
-  <div class="card-bookings d-flex">
-    <div class="card-event">
-      <h3><%= link_to event.location, event_path(event) %></h3>
-      <p><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></p>
+  <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
+  <div class="row justify-content-center row-interests">
+    <div class="col col-interests" id = "personailty-type">
+      <div class = "inner-box">
+        <h3>Personality Type</h3>
+      </div>
+      <h1>ESFP-A</h1>
     </div>
-    <% end %>
-      <div class="card-more-events">
-      <h3>Add More</h3>
-      <p>+</p>
+    <div class="col col-interests" id = "interests">
+      <div class = "inner-box">
+        <h3>Interests</h3>
+      </div>
+    </div>
+    <div class="col col-interests" id = "bio">
+      <div class = "inner-box">
+        <h3>Bio</h3>
+      </div>
     </div>
   </div>
 
-  </div>
-</div>

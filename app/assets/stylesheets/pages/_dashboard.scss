@@ -18,6 +18,10 @@
   background-size: cover;
   background-position: center;
   margin: 4px;
+  margin-left: 30px;
+  margin-right: 20px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+
 }
 
 .card-my-values {
@@ -32,7 +36,7 @@
     color: #F29191;
   }
   h3 {
-    text-align: center;
+
   }
 }
 
@@ -110,4 +114,111 @@ h3 {
 
 .personality-test {
   justify-content: left;
+}
+
+#profile-card-dashboard {
+  margin-top: 40px;
+  width: 90%;
+  background-color: rgb(158, 204, 203);
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  padding: 18px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#dashboard-event-button {
+  padding: 5px 30px;
+}
+
+#profile-right {
+  background-color: white;
+}
+
+#profile-middle {
+  margin-top: 60px;
+}
+
+#profile-middle h5 {
+  margin-bottom: 20px;
+}
+
+#profile-right {
+  margin-right: 50px;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+
+}
+
+#profile-right h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+#value-list-dashboard {
+  padding-inline-start: 15px;
+  margin-bottom: 20px;
+}
+
+#value-list-dashboard li {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+#dashboard-value-button {
+  padding: 5px 30px;
+  text-align: center;
+  width:90%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(158, 204, 203);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 2px;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+}
+
+#dashboard-value-button:hover {
+  text-decoration: none;
+  transition: 0.2s;
+  background-color: #5EAAA8;
+}
+
+.row-interests {
+grid-gap: 30px;
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+margin-top: 20px;
+}
+
+.col-interests {
+border: 2px solid #5EAAA8;
+border-radius: 5px;
+padding-right: 0px;
+padding-left: 0px;
+padding-bottom: 0px;
+background-color: rgb(158, 204, 203);
+
+}
+
+.dashboard-row-headers {
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+margin-top: 40px;
+}
+
+.inner-box {
+  background-color: rgb(158, 204, 203);
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  background-color: white;
+
+}
+
+.inner-box h1{
+ padding: 0px;
+ margin: 0px;
 }
