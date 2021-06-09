@@ -52,7 +52,7 @@
       </div>
     <% end %>
   </div>
-  <div>
-  <%= link_to "Find your event", events_path, id: "btn-banner-red"%>
-  </div>
+  <div id="booking-button">
+    <%=link_to "Start your Event", event_video_session_path(@event), id: "btn-banner-red"%>
+</div>
 </div>
