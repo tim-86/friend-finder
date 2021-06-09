@@ -24,7 +24,7 @@
       <div class= "show-page-card">
         <div class="left-side-show-page-card">
           <div class= "show-page-card-image" style="background-image: url(<%= cl_image_path user.avatar.key %>)"></div>
-            <p><%= user.first_name %>, <%= ((Time.zone.now - user.birthday.to_time) /1.year.seconds).floor %> <p>
+            <p id="show-page-name"><%= user.first_name %>, <%= ((Time.zone.now - user.birthday.to_time) /1.year.seconds).floor %> <p>
           <div class="interest-show d-flex">
             <% user.user_interests.each do |user_interest| %>
             <% test = Interest.find(user_interest.interest_id)%>
@@ -36,7 +36,7 @@
           <div class="core-value-title">
             <h3>Core Values</h3>
           </div>
-          <ul class= "value-list">
+          <ul id = "value-list" class= "value-list">
           <% user.core_values.each do |core| %>
             <% value = Value.find(UserValue.find(core).value_id) %>
             <div class="value-item-heart">
