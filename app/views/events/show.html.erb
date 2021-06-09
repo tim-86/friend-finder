@@ -8,11 +8,11 @@
   <div class = "subheader">
     <% if @event.date < DateTime.current + 1 %>
         <h1>You took part in this event!</h1>
-        <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3> 
+        <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
         <h5>Get in touch with your new friends</h5>
       <% else %>
         <h1>Book your spot in this event!</h1>
-        <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3> 
+        <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
         <h5>Get ready to meet beautiful people in your area</h5>
       <% end %>
   </div>
@@ -31,11 +31,13 @@
           <ul class= "value-list">
           <% user.core_values.each do |core| %>
             <% value = Value.find(UserValue.find(core).value_id) %>
-            <li class= "value-item"><%= value.name %></p>
+            <div class="value-item-heart">
+              <i class="fas fa-heart"></i><li class= "value-item"><%= value.name %></p>
+            </div>
           <% end %>
           </ul>
           <% if @event.date < DateTime.current + 1 %>
-            <a class="btn-red" href=""> Contact</a>
+            <a class="btn-red d-flex" href=""> Contact</a>
           <% else %>
           <% end %>
         </div>
