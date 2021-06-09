@@ -4,16 +4,16 @@
 
 
 
- <div class = "container">
+<div class = "container">
   <div class = "subheader">
-    <% if @event.date < DateTime.current + 1 %>
+    <% if @event.date < DateTime.current + 1.second %>
         <h1>You took part in this event!</h1>
         <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3> 
         <h5>Get in touch with your new friends</h5>
       <% else %>
         <h1>Book your spot in this event!</h1>
         <h3 class="text-left p-0"><%= @event.date.to_time.strftime('%B %e at %l:%M %p') %></h3> 
-        <h5>Get ready to meet beautiful people in your area</h5>
+        <h5>Get ready to meet new friends in your area</h5>
       <% end %>
   </div>
 
@@ -41,5 +41,8 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div>
+  <%= link_to "Find your event", events_path, id: "btn-banner-red"%>
   </div>
 </div>
