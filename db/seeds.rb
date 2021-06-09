@@ -497,6 +497,18 @@ puts "event created"
 
 event = Event.new(
   location: "New York",
+  date: "08/06/2021 19:00:00",
+  price: 19.99,
+  max_participants: 4,
+  description: "Classic Speed Friend Finding",
+  video_link: "www.google.de"
+)
+event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'new york.jpg')
+event.save!
+puts "event created"
+
+event = Event.new(
+  location: "New York",
   date: "01/07/2021 20:00:00",
   price: 19.99,
   max_participants: 6,
@@ -561,6 +573,7 @@ puts "creating some friends"
   tim.events << Event.last
   tim.events << Event.first
   tim.events << Event.second
+  tim.events << Event.third
   file = URI.open("https://avatars.githubusercontent.com/u/81582275?v=4")
   tim.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
   tim.save!

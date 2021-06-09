@@ -74,21 +74,20 @@
 
         <div class="col-interests">
           <%= link_to event_path(event) do %>
-        <div class = "inner-box">
-          <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
-        </div>
-         <div>
-           <%= image_tag "people.svg", class: "event-img" %>
-           <% if event.users.count > 1 %>
-             <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
-           <% else%>
-             <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
-           <% end %>
-         </div>
-
-        </div>
-        <% end %>
-    <% end %>
+            <div class = "inner-box">
+              <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
+            </div>
+            <div>
+              <%= image_tag "people.svg", class: "event-img" %>
+              <% if event.users.count > 1 %>
+                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
+              <% else%>
+                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
+              <% end %>
+            </div>
+          <% end %>
+        </div><!-- .col-interests -->
+      <% end %>
     <% end %>
   </div>
 
@@ -98,24 +97,22 @@
   <div class="row-interests">
     <% current_user.events.each do |event| %>
       <% if event.date < DateTime.current %>
-
-        <div class="col col-interests">
+        <div class="col-interests">
           <%= link_to event_path(event) do %>
-        <div class = "inner-box">
-          <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
-        </div>
-         <div>
-           <%= image_tag "people.svg", class: "event-img" %>
-           <% if event.users.count > 1 %>
-             <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
-           <% else%>
-             <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
-           <% end %>
-         </div>
-
-        </div>
-        <% end %>
-    <% end %>
+            <div class = "inner-box">
+              <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
+            </div>
+            <div>
+              <%= image_tag "people.svg", class: "event-img" %>
+              <% if event.users.count > 1 %>
+                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
+              <% else%>
+                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
+              <% end %>
+            </div>
+          <% end %>
+        </div><!-- .col-interests -->
+      <% end %>
     <% end %>
   </div>
 
