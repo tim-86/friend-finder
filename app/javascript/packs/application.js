@@ -28,7 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import { initEmojiButtons } from '../components/emoji-trigger'
+import { initEmojiButtons } from '../components/emoji-trigger';
 
 import { setupVideoCall } from '../components/video_call';
 import { setupVideoDates } from '../components/video_dates';

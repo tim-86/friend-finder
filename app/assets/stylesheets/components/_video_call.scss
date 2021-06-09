@@ -73,8 +73,75 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  video {
+    height: 500px;
+  }
 }
 
 .video-frame {
   display:flex;
+}
+
+.on-screen-friend-value {
+  color: rgb(112, 179, 177);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 35px;
+  transition: 1s;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.friend-value-list{
+  list-style: none;
+  border: 1px solid rgb(242, 145, 145);
+  padding: 0;
+
+}
+.friend-value-list-item{
+  display: inline;
+  font-weight:bold;
+  margin-left: 2px;
+  margin-right: 4px;
+}
+
+
+.on-screen-friend-interest{
+  opacity: 0.1;
+  position: absolute;
+  bottom: 5px;
+  transition: 1s;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.friend-interest-list-item {
+  color: white;
+  display: inline;
+}
+
+.friend-interest-list{
+  list-style: none;
+  border: 1px solid rgb(242, 145, 145);
+  padding: 0;
+
+}
+.friend-interest-list-item{
+  font-weight:bold;
+  font-size: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+}
+
+
+.video-push{
+  height: 50px;
+}
+
+.no-video-available {
+margin-top: 200px;
+text-align: center;
 }
