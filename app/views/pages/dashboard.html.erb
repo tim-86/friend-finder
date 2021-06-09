@@ -48,7 +48,7 @@
         <div class="emoji-triggers d-flex justify-content-center">
           <% @interests.each_with_index do |interest, index| %>
             <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
-              <button class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
+              <button id = "emoji-trigger-button" class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
               <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
             <% end %>
           <% end %>
@@ -68,11 +68,11 @@
 <!--   upcoming events -->
 
   <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
-  <div class="row justify-content-center row-interests">
+  <div class="row justify-content-left row-interests">
     <% current_user.events.each do |event| %>
       <% if event.date > DateTime.current %>
 
-        <div class="col col-interests">
+        <div class="col-4 col-interests">
           <%= link_to event_path(event) do %>
         <div class = "inner-box">
           <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
@@ -92,13 +92,14 @@
     <% end %>
   </div>
 
+<!--   past events -->
 
-  <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
-  <div class="row justify-content-center row-interests">
+  <h2 class="dashboard-row-headers">Your past Events...</h2>
+  <div class="row justify-content-left row-interests">
     <% current_user.events.each do |event| %>
       <% if event.date < DateTime.current %>
 
-        <div class="col col-interests">
+        <div class="col-4 col-interests">
           <%= link_to event_path(event) do %>
         <div class = "inner-box">
           <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
