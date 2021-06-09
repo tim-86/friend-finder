@@ -610,7 +610,7 @@ puts "creating some friends"
     lucas.events << Event.last
     lucas.events << Event.first
     lucas.events << Event.second
-    file = URI.open("https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1605&h=2140&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F06%2F24%2FGettyImages-138427199-2000.jpg")
+    file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1619680651/yrxmxjqbxhgcp8stvlwn.jpg")
     lucas.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
     lucas.save!
     puts "Brought lucas to life"
@@ -642,7 +642,7 @@ puts "creating some friends"
       # user.events << Event.last
       file = URI.open("https://bilder.t-online.de/b/85/97/21/24/id_85972124/tid_da/matthew-perry-in-friends-spielte-er-chandler-bing-.jpg")
       chandler.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-      chander.events << Event.first
+      chandler.events << Event.first
       chandler.save!
       puts "Brought chandler to life"
 
