@@ -3,26 +3,33 @@
   grid-template-columns: 30% 30%;
   margin: 0 auto;
   justify-content: center;
+  grid-column-gap: 50px;
+  grid-row-gap: 30px;
   .show-page-card {
     display:flex;
     background-color: rgb(158, 204, 203);
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
     margin-top: 32px;
     .left-side-show-page-card{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px;
+      padding: 30px;
       font-weight: bold;
       font-size: 16px;
     }
     .right-side-show-page-card {
       background-color:white;
+      width: 160px;
       margin-right: 4px;
       padding: 16px;
       margin-top:2px;
       margin-bottom: 2px;
+      .core-value-title {
+        margin: 16px;
+        padding: 8px;
+      }
     }
     .show-page-card-image{
       height: 100px;
@@ -37,17 +44,25 @@
       list-style: none;
       text-align: left;
       padding-left:0px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+      margin-top: 24px;
     }
     .value-item{
       padding-bottom: 4px;
       font-weight: bold;
     }
+    .interest-show{
+      font-size: 20px;
+      padding-bottom: 12px;
+    }
     .fa-heart{
-      color: red;
+      color: #F29191;
     }
     .btn-red{
       padding: 4px 16px;
+      position: bottom;
+      margin-right: auto;
+      margin-left: auto;
     }
-  } 
+  }
 }
