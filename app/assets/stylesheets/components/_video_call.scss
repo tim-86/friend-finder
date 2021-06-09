@@ -87,7 +87,7 @@
   color: rgb(112, 179, 177);
   opacity: 0.1;
   position: absolute;
-  bottom: 30px;
+  bottom: 35px;
   transition: 1s;
   &:hover{
     opacity: 0.8;
@@ -134,4 +134,14 @@
   font-size: 16px;
   margin-left: 2px;
   margin-right: 4px;
+}
+
+
+.video-push{
+  height: 50px;
+}
+
+.no-video-available {
+margin-top: 200px;
+text-align: center;
 }
