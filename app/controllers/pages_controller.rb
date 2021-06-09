@@ -30,9 +30,14 @@ class PagesController < ApplicationController
 
   def set_video_date
     @video_date = @event.video_dates.where("user1_id = :user_id OR user2_id = :user_id", user_id: current_user.id).where(
-      "start_time >= ? AND start_time <= ?", DateTime.now, DateTime.now + Event.duration.seconds
+      "start_time <= ? AND start_time >= ?", DateTime.now, DateTime.now - Event.duration.seconds
     ).first
   end
+
+  #3 oclock start time
+  # i refresh my page 3:00:59 i get first video date! (because it is still running)
+  #3:01 is the second date
+  #i reload page at 03:01:20 the js will reload the page at 03:02:20 and i will miss 20 seconds of the third date
 
   def setup_video_call_token
     # No chatting with yourself

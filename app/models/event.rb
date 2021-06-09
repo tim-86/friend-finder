@@ -20,13 +20,12 @@ class Event < ApplicationRecord
     generations << [combinations[0], combinations[1]]
     generations << [combinations[2], combinations[3]]
     generations << [combinations[4], combinations[5]]
-     i = 0
+
     generations.each_with_index do |generation, index|
       generation.each do |combination|
         event_time = self.date
-        new_event_time = event_time + Event.duration * i.seconds
+        new_event_time = event_time + Event.duration * index.seconds
         VideoDate.create(user1: combination[0], user2: combination[1], start_time: new_event_time, event: self)
-        i =+ 1 
       end
     end
 

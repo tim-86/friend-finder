@@ -1,4 +1,5 @@
-<h2>Chatting to <%= friend.first_name %></h2>
+
+<h2 class="text-center">Chatting to <%= friend.first_name %></h2>
 <div class="video-call col-7">
   <div id="video-call-token" data-video-call-token="<%= JSON.generate(video_call_token) %>"></div>
     <div class="call-video-views">
@@ -9,7 +10,16 @@
         <div class="waiting-for-buddy hidden">
           Waiting for your friend to join...
         </div>
-        <div class="on-screen-friend-info">
+        <div class= "on-screen-friend-interest">
+          <ul class= "friend-interest-list">
+            <li class= "friend-interest-list-item"><%= friend.first_name %>´s Interests:</li>
+              <% friend.user_interests.each do |user_interest| %>
+              <%  interest = Interest.find(user_interest.interest_id)%>
+            <li class="friend-value-list-item"><%= interest.name %></li>
+              <% end %>
+        </div>
+        <div class="on-screen-friend-value">
+        
           <ul class= "friend-value-list">
           <li class= "friend-value-list-item"><%= friend.first_name %>´s Values:</li>
             <% friend.core_values.each do |core| %>
@@ -22,7 +32,7 @@
       <div id="local-video"></div>
     </div>
     <div class="call-buttons">
-      <%= link_to '#', class: 'call-button btn-start-call', data: {call_duration: Event.duration} do %>
+      <%= link_to '#', class: 'call-button btn-start-call', data: {call_duration: video_date.seconds_left} do %>
         <i class="fas fa-phone"></i> Call
       <% end %>
       <%= link_to '#', class: 'call-button btn-end-call' do %>

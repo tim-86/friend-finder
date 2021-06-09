@@ -26,4 +26,9 @@ class VideoDate < ApplicationRecord
     end
   end
 
+  def seconds_left
+    end_time = start_time + Event.duration.seconds
+    (end_time - DateTime.now).to_i
+  end
+
 end
