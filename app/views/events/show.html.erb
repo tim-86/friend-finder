@@ -35,6 +35,12 @@
               <i class="fas fa-heart"></i><li class= "value-item"><%= value.name %></p>
             </div>
           <% end %>
+          <div class="interest-show">
+            <% user.user_interests.each do |user_interest| %>
+            <% test = Interest.find(user_interest.interest_id)%>
+            <%= test.name %>
+            <% end %>
+          </div>
           </ul>
           <% if @event.date < DateTime.current + 1 %>
             <a class="btn-red d-flex" href=""> Contact</a>
