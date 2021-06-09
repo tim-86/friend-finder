@@ -200,6 +200,8 @@ padding-right: 0px;
 padding-left: 0px;
 padding-bottom: 0px;
 background-color: rgb(158, 204, 203);
+text-align: center;
+height: 200px;
 
 }
 
@@ -221,4 +223,16 @@ margin-top: 40px;
 .inner-box h1{
  padding: 0px;
  margin: 0px;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+
+width: 60px;
+height: 60px;
+margin-top: 35px;
+
 }

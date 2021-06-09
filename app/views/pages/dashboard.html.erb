@@ -45,7 +45,7 @@
       <div class = "inner-box">
         <h3>Interests</h3>
       </div>
-        <div class="emoji-triggers d-flex">
+        <div class="emoji-triggers d-flex justify-content-center">
           <% @interests.each_with_index do |interest, index| %>
             <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
               <button class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
@@ -62,7 +62,31 @@
     </div>
   </div>
 
+<!--   upcoming events -->
+
   <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
+  <div class="row justify-content-center row-interests">
+    <div class="col col-interests" id = "personailty-type">
+      <div class = "inner-box">
+        <h3>Personality Type</h3>
+      </div>
+      <h1>ESFP-A</h1>
+    </div>
+    <div class="col col-interests" id = "interests">
+      <div class = "inner-box">
+        <h3>Interests</h3>
+      </div>
+    </div>
+    <div class="col col-interests" id = "bio">
+      <div class = "inner-box">
+        <h3>Bio</h3>
+      </div>
+    </div>
+  </div>
+
+<!--   past events -->
+
+  <h2 class="dashboard-row-headers">Your past Events...</h2>
   <div class="row justify-content-center row-interests">
     <div class="col col-interests" id = "personailty-type">
       <div class = "inner-box">
