@@ -217,7 +217,7 @@ security = Value.new(
   name: "Variety",
   description: "frequent change, diversity",
   )
-  url_variety = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1622811436/c9Zaa3_vomr9d.jpg'
+  url_variety = 'https://res.cloudinary.com/dih0o5fng/image/upload/v1623329757/Mediterranean-Style-Mezze-Platter_hfmdr7.jpg'
   filename = File.basename(URI.parse(url_variety).path)
   file = URI.open(url_variety)
   variety.photo.attach(io: file, filename: filename)
