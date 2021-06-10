@@ -7,6 +7,13 @@
     <%= render "shared/video_chat", video_call_token: @video_call_token, friend: @friend, video_date: @video_date %>
   </div>
   <% else %>
-    <h2 class= "no-video-available" >At the moment there is no video available for you.</h2>
+    <h2 class= "no-video-available" >
+      Thank you for joining this event.<br>
+      The team from Friend Finder wishes you best of luck <br>
+      with your new besties.
+    </h2>
+    <div class="mx-auto w-50 m-4">
+     <%= image_tag "realTeam.jpg", class: "team-img text-align-center", width: "100%" %>
+    </div>
   <% end %>
 </div>
