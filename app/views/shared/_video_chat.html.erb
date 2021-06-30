@@ -12,7 +12,7 @@
         </div>
         <div class= "on-screen-friend-interest">
           <ul class= "friend-interest-list">
-            <li class= "friend-interest-list-item"><%= friend.first_name %>´s Interests:</li>
+            <li class= "friend-value-list-item name-friend "><%= friend.first_name %>´s Interests:</li>
               <% friend.user_interests.each do |user_interest| %>
               <%  interest = Interest.find(user_interest.interest_id)%>
             <li class="friend-value-list-item"><%= interest.name %></li>

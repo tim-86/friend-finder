@@ -81,13 +81,11 @@
 
 .on-screen-friend-value {
   color: rgb(112, 179, 177);
-  opacity: 0.5;
+  opacity: 0.8;
   position: absolute;
   bottom: 45px;
+  left: 10px;
   transition: 1s;
-  &:hover{
-    opacity: 0.8;
-  }
 }
 
 .friend-value-list{
@@ -105,13 +103,10 @@
 
 
 .on-screen-friend-interest{
-  opacity: 0.5;
+  opacity: 0.8;
   position: absolute;
   bottom: 5px;
-  transition: 1s;
-  &:hover{
-    opacity: 0.8;
-  }
+  left: 10px;
 }
 
 .friend-interest-list-item {
@@ -140,4 +135,10 @@
 .no-video-available {
 margin-top: 200px;
 text-align: center;
+}
+
+
+.name-friend {
+  color: rgb(94, 170, 168);
+  opacity: 0.8;
 }
