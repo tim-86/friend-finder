@@ -4,7 +4,9 @@
   <div class="container">
     <h1>Friend Finder</h1>
     <p id ="banner-second">Find meaningful connections</p>
-    <%= link_to "Find your event", events_path, id: "btn-banner-red"%>
+    <div class="btn-banner-red">
+      <%= link_to "Find your event", events_path, id: "btn-banner-red"%>
+    </div>
     <%= link_to "Login", new_user_session_path, id: "btn-login" if user_signed_in? == false%>
     <%= image_tag "people.svg", id: "banner-img" %>
   </div>
@@ -14,13 +16,13 @@
 <!-- what is friend finder -->
 <div class="container">
   <div class="row justify-content-between" id="home-section">
-    <div class="col-5">
+    <div class="col-12 col-lg-5">
       <h2>What is Friend Finder?</h2>
       <p class="text-justify home-text">Kickoff new friendships with Friend Finder!
 This social platform offers you the chance to connect to new people in your area and form lasting friendships. Bond with ten strangers in one evening via video speeddates before then deciding to meet up with them in person. By having done a value test before you have more extensive topics to base your conversations on and can quickly surpass the awkward stage of smalltalk forming connections on a deeper level.</p>
       <%= link_to "Get started",  values_path, id: "btn-home"%>
     </div>
-    <div class="col-6" id = "home-img">
+    <div class="col-12 col-lg-6" id = "home-img">
     </div>
   </div>
 
@@ -44,7 +46,7 @@ This social platform offers you the chance to connect to new people in your area
       <p class="text-justify">Hi, I’m Chandler. I make jokes when I’m uncomfortable. That is why it isn’t always easy to get to know new people, but Friend Finder really helped me to get past the awkward stage of smalltalk and connect to people on a deeper level. And by knowing the other participants’ traits and how bad their laughs are like (#ScaredByJanice) before the speed dates definitely takes my social anxiety and I can prepare what I say to them.</p>
       <p style="font-size: 20px" class="text-right"><strong>Chandler, 32</strong></p>
     </div>
-    <div class="col testimonial">
+    <div class="col testimonial"id="ross">
       <div class="text-center">
         <%= image_tag "Ross.jpeg", class: "rounded-circle testimonial-img" %>
       </div>
