@@ -1,11 +1,116 @@
-.banner {
-  background-color: #5EAAA8;
-  padding: 150px 0;
-  height: 550px;
-  position: relative;
-  margin-bottom: 40px;
+@media (max-width: 576px) {
+  .banner {
+    background-color: #5EAAA8;
+    padding: 120px 0;
+    height: 550px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #banner-second {
+    padding-bottom: 30px;
+  }
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 40px;
+    top: 380px;
+    width: 80%;
+    bottom: 0;
+  }
 }
 
+@media (min-width: 576px) {
+  .banner {
+    background-color: #5EAAA8;
+    padding: 120px 0;
+    height: 550px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #banner-second {
+    padding-bottom: 30px;
+  }
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 20%;
+    top: 380px;
+    width: 60%;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    background-color: #5EAAA8;
+    padding: 150px 0;
+    height: 550px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 20%;
+    top: 350px;
+    width: 60%;
+    bottom: 0;
+  }
+  #banner-second {
+    padding-bottom: 20px;
+}
+}
+
+@media (min-width: 992px) {
+  .banner {
+    background-color: #5EAAA8;
+    padding: 150px 0;
+    height: 700px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 10%;
+    top: 350px;
+    width: 80%;
+    bottom: 0;
+  }
+  #banner-second {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .banner {
+    background-color: #5EAAA8;
+    padding: 150px 0;
+    height: 670px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 5%;
+    top: 300px;
+    width: 70%;
+    bottom: 0;
+  }
+  #banner-second {
+    padding-bottom: 20px;
+}
+
+}
 .banner h1 {
   margin: 0;
   color: white;
@@ -21,20 +126,8 @@
   text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
 }
 
-#banner-second {
-  padding-bottom: 20px;
-}
 
 
-#banner-img {
--webkit-animation: mover 3s infinite  alternate;
-animation: mover 2s infinite  alternate;
-position:absolute;
-right: 100px;
-top: 220px;
-width: 60%;
-bottom: 0;
-}
 
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
