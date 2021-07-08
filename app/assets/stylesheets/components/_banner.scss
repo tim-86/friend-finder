@@ -120,6 +120,18 @@
     margin-bottom: 40px;
     text-align: left;
   }
+
+  #banner-img {
+    animation: mover 2s infinite  alternate;
+    position:absolute;
+    right: 25%;
+    top: 310px;
+    width: 50%;
+    bottom: 0;
+  }
+  #banner-second {
+    padding-bottom: 20px;
+  }
 }
 
 .banner h1 {
