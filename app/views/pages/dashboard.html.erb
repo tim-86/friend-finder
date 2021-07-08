@@ -1,118 +1,14 @@
 
-
 <div class="container">
 
-<!--   profile card  -->
-
-  <div class="row" id = "profile-card-dashboard">
-    <div class="col-sm" id = "profile-left">
+<!-- profile card -->
+  <div class="row">
+    <div class="col">
       <% if current_user.avatar.attached? %>
-        <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)"></div>
+         <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key %>)"></div>
       <% else %>
-        <div class="avatar-big" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"></div>
-      <% end %>
-    </div>
-    <div class="col-sm" id = "profile-middle">
-      <h2><%= current_user.first_name %>, <%= ((Time.zone.now - current_user.birthday.to_time) /1.year.seconds).floor %></h2>
-      <h5>📍 <%= current_user.location %></h5>
-      <%= link_to "Find event", events_path, class: "btn-red event-card-button", id: "dashboard-event-button" %>
-    </div>
-    <div class="col-3" id = "profile-right">
-      <h3>My Core Values </h3>
-      <ul class= "value-list" id="value-list-dashboard">
-        <% current_user.core_values.each do |core| %>
-          <% value = Value.find(UserValue.find(core).value_id) %>
-          <div class="value-item-heart">
-            <i class="fas fa-heart heart-dashboard"></i><li class= "value-item"><%= value.name %></li>
-          </div>
-        <% end %>
-      </ul>
-      <%= link_to "Take value test", values_path, class: "btn-red event-card-button d-flex justify-content-center", id: "dashboard-value-button" %>
+         <div class="avatar-big" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')">
+       <% end %>
     </div>
   </div>
-
-<!--   profile details -->
-
-  <h2 class="dashboard-row-headers">About me...</h2>
-  <div class="row-interests">
-    <div class="col-interests" id = "personailty-type">
-      <div class = "inner-box">
-        <h3>Personality Type</h3>
-      </div>
-      <h1 id="perso">ESFP-A</h1>
-    </div>
-    <div class="col col-interests" id = "interests">
-      <div class = "inner-box">
-        <h3>Interests</h3>
-      </div>
-        <div class="emoji-triggers d-flex">
-          <% @interests.each_with_index do |interest, index| %>
-            <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
-              <button id = "emoji-trigger" class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
-              <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
-            <% end %>
-          <% end %>
-        </div>
-
-    </div>
-    <div class="col col-interests" id = "bio">
-      <div class = "inner-box">
-        <h3>Bio</h3>
-      </div>
-      <div>
-        <p id="bio-text">Hey guys! I am a washreal German who recently moved to New York to live the American Dream.</p>
-      </div>
-    </div>
-  </div>
-
-<!--   upcoming events -->
-
-  <h2 class="dashboard-row-headers">Your upcoming Events...</h2>
-  <div class="row-interests">
-    <% current_user.events.each do |event| %>
-      <% if event.date > DateTime.current %>
-
-        <div class="col-interests">
-          <%= link_to event_path(event) do %>
-            <div class = "inner-box">
-              <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
-            </div>
-            <div>
-              <%= image_tag "people.svg", class: "event-img" %>
-              <% if event.users.count > 1 %>
-                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
-              <% else%>
-                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
-              <% end %>
-            </div>
-          <% end %>
-        </div><!-- .col-interests -->
-      <% end %>
-    <% end %>
-  </div>
-
-<!--   past events -->
-
-  <h2 class="dashboard-row-headers">Your past Events...</h2>
-  <div class="row-interests">
-    <% current_user.events.each do |event| %>
-      <% if event.date < DateTime.current %>
-        <div class="col-interests">
-          <%= link_to event_path(event) do %>
-            <div class = "inner-box">
-              <h3><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h3>
-            </div>
-            <div>
-              <%= image_tag "people.svg", class: "event-img" %>
-              <% if event.users.count > 1 %>
-                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
-              <% else%>
-                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
-              <% end %>
-            </div>
-          <% end %>
-        </div><!-- .col-interests -->
-      <% end %>
-    <% end %>
-  </div>
-
+</div>
