@@ -1,263 +1,275 @@
-.card-profile {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-gap: 8px;
+// .card-profile {
+//   display: grid;
+//   grid-template-columns: 2fr 1fr 1fr;
+//   grid-gap: 8px;
+//   background-color: #b1d6d5;
+//   margin-top: 24px;
+//   padding: 16px;
+//   height: 300px;
+//   width: 100%;
+//   border-radius: 5px;
+//   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+// }
+
+// .card-my-values {
+//   background-color: white;
+//   padding: 8px;
+//   margin-top: 8px;
+//   margin-bottom: 16px;
+//   justify-content: center;
+//   border-radius: 5px;
+
+//   .fa-heart {
+//     color: #F29191;
+//   }
+//   h3 {
+
+//   }
+// }
+
+
+// h3 {
+//     color: #5EAAA8;
+//     font-size: 24px;
+//     padding: 8px;
+//     text-align: center;
+//   }
+
+// .card-about .card-bookings {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   justify-content: center;
+//   margin: 16px;
+//   padding: 12px;
+// }
+
+// .card-personality {
+//   border: 2px solid #5EAAA8;
+//   border-radius: 5px;
+//   width: 30%;
+//   margin: 16px;
+//   img {
+//     height: 80px;
+//     width: 80px;
+//     margin: 8px;
+//     margin-left: 24px;
+//   }
+// }
+
+// .card-interest {
+//   border: 2px solid #5EAAA8;
+//   border-radius: 5px;
+//   width: 30%;
+//   margin: 16px;
+//   h1 {
+//     text-align: center;
+//   }
+// }
+
+// .card-more {
+//   border: 2px solid #5EAAA8;
+//   border-radius: 5px;
+//   width: 30%;
+//   margin: 16px;
+//   p {
+//     font-size: 24px;
+//     font-weight: bold;
+//   }
+// }
+
+// .card-more-events {
+//   border: 2px solid #5EAAA8;
+//   border-radius: 5px;
+//   width: 30%;
+//   margin: 16px;
+//   p {
+//     font-size: 24px;
+//     font-weight: bold;
+//   }
+//   h3 {
+//     color: #5EAAA8;
+//   }
+// }
+
+// .card-event {
+//   border: 2px solid #5EAAA8;
+//   border-radius: 5px;
+//   width: 30%;
+//   margin: 16px;
+// }
+
+// .personality-test {
+//   justify-content: left;
+// }
+
+// #profile-card-dashboard {
+//   margin-top: 40px;
+//   width: 90%;
+//   background-color: rgb(158, 204, 203);
+//   border-radius: 5px;
+//   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+//   padding: 18px;
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+
+// #dashboard-event-button {
+//   padding: 5px 30px;
+// }
+
+// #profile-right {
+//   background-color: white;
+// }
+
+// #profile-middle {
+//   margin-top: 60px;
+// }
+
+// #profile-middle h5 {
+//   margin-bottom: 20px;
+// }
+
+// #profile-right {
+//   margin-right: 50px;
+//   border-radius: 5px;
+//   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+
+// }
+
+// #profile-right h3 {
+//   margin-top: 20px;
+//   margin-bottom: 0;
+// }
+// #value-list-dashboard {
+//   padding-inline-start: 15px;
+//   margin-bottom: 20px;
+// }
+
+// #value-list-dashboard li {
+//   margin-top: 10px;
+//   font-size: 18px;
+// }
+
+// #dashboard-value-button {
+//   padding: 5px 30px;
+//   text-align: center;
+//   width:90%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   background-color: rgb(158, 204, 203);
+//   color: white;
+//   font-weight: bold;
+//   font-size: 16px;
+//   border-radius: 2px;
+//   text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+//   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+// }
+
+// #dashboard-value-button:hover {
+//   text-decoration: none;
+//   transition: 0.2s;
+//   background-color: #5EAAA8;
+// }
+
+// .row-interests {
+// display: grid;
+// grid-template-columns: 1fr 1fr 1fr;
+// grid-gap: 30px;
+// width: 90%;
+// margin-right: auto;
+// margin-left: auto;
+// margin-top: 20px;
+// }
+
+// .col-interests {
+// border: 2px solid #5EAAA8;
+// border-radius: 5px;
+// padding-right: 0px;
+// padding-left: 0px;
+// padding-bottom: 0px;
+// background-color: rgb(158, 204, 203);
+// text-align: center;
+// height: 205px;
+// color:white;
+// }
+
+// .dashboard-row-headers {
+// width: 90%;
+// margin-right: auto;
+// margin-left: auto;
+// margin-top: 40px;
+// }
+
+// .inner-box {
+//   background-color: rgb(158, 204, 203);
+//   width: 100%;
+//   border-radius: 5px 5px 0px 0px;
+//   background-color: white;
+//   padding-right: 4px;
+//   padding-top: 4px;
+
+// }
+
+// .inner-box h1{
+//  padding: 0px;
+//  margin: 0px;
+// }
+
+// .emoji-triggers {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   padding: 0 40px;
+// }
+
+// .emoji-trigger
+// {
+
+// width: 60px;
+// height: 60px;
+// margin-top: 35px;
+// font-size: 40px;
+// border: 1px solid rgb(158, 204, 203);
+// border-radius: 2px;
+// background-color: rgb(158, 204, 203);
+// }
+
+// .inner-box h3 {
+//   text-align: left;
+// }
+
+// .event-img {
+//   width: 90%;
+//   margin-top: 5px;
+// }
+
+// #bio-text {
+//   text-align: left;
+//   font-size: 20px;
+//   padding: 0px 10px;
+// }
+
+// #perso {
+//   margin-top: 40px;
+// }
+
+// .friend-count {
+//   color: white;
+// }
+
+// .heart-dashboard {
+//   color: #F29191;
+// }
+
+
+.name-interests {
+  margin-left: 40px;
+}
+
+.profile-card {
   background-color: #b1d6d5;
-  margin-top: 24px;
-  padding: 16px;
-  height: 300px;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-}
-
-.card-my-values {
-  background-color: white;
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  justify-content: center;
-  border-radius: 5px;
-
-  .fa-heart {
-    color: #F29191;
-  }
-  h3 {
-
-  }
-}
-
-
-h3 {
-    color: #5EAAA8;
-    font-size: 24px;
-    padding: 8px;
-    text-align: center;
-  }
-
-.card-about .card-bookings {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  justify-content: center;
-  margin: 16px;
-  padding: 12px;
-}
-
-.card-personality {
-  border: 2px solid #5EAAA8;
-  border-radius: 5px;
-  width: 30%;
-  margin: 16px;
-  img {
-    height: 80px;
-    width: 80px;
-    margin: 8px;
-    margin-left: 24px;
-  }
-}
-
-.card-interest {
-  border: 2px solid #5EAAA8;
-  border-radius: 5px;
-  width: 30%;
-  margin: 16px;
-  h1 {
-    text-align: center;
-  }
-}
-
-.card-more {
-  border: 2px solid #5EAAA8;
-  border-radius: 5px;
-  width: 30%;
-  margin: 16px;
-  p {
-    font-size: 24px;
-    font-weight: bold;
-  }
-}
-
-.card-more-events {
-  border: 2px solid #5EAAA8;
-  border-radius: 5px;
-  width: 30%;
-  margin: 16px;
-  p {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  h3 {
-    color: #5EAAA8;
-  }
-}
-
-.card-event {
-  border: 2px solid #5EAAA8;
-  border-radius: 5px;
-  width: 30%;
-  margin: 16px;
-}
-
-.personality-test {
-  justify-content: left;
-}
-
-#profile-card-dashboard {
-  margin-top: 40px;
-  width: 90%;
-  background-color: rgb(158, 204, 203);
-  border-radius: 5px;
-  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-  padding: 18px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-#dashboard-event-button {
-  padding: 5px 30px;
-}
-
-#profile-right {
-  background-color: white;
-}
-
-#profile-middle {
-  margin-top: 60px;
-}
-
-#profile-middle h5 {
-  margin-bottom: 20px;
-}
-
-#profile-right {
-  margin-right: 50px;
-  border-radius: 5px;
-  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-
-}
-
-#profile-right h3 {
   margin-top: 20px;
-  margin-bottom: 0;
-}
-#value-list-dashboard {
-  padding-inline-start: 15px;
-  margin-bottom: 20px;
-}
-
-#value-list-dashboard li {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-#dashboard-value-button {
-  padding: 5px 30px;
-  text-align: center;
-  width:90%;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: rgb(158, 204, 203);
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 2px;
-  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-}
-
-#dashboard-value-button:hover {
-  text-decoration: none;
-  transition: 0.2s;
-  background-color: #5EAAA8;
-}
-
-.row-interests {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 30px;
-width: 90%;
-margin-right: auto;
-margin-left: auto;
-margin-top: 20px;
-}
-
-.col-interests {
-border: 2px solid #5EAAA8;
-border-radius: 5px;
-padding-right: 0px;
-padding-left: 0px;
-padding-bottom: 0px;
-background-color: rgb(158, 204, 203);
-text-align: center;
-height: 205px;
-color:white;
-}
-
-.dashboard-row-headers {
-width: 90%;
-margin-right: auto;
-margin-left: auto;
-margin-top: 40px;
-}
-
-.inner-box {
-  background-color: rgb(158, 204, 203);
-  width: 100%;
-  border-radius: 5px 5px 0px 0px;
-  background-color: white;
-  padding-right: 4px;
-  padding-top: 4px;
-
-}
-
-.inner-box h1{
- padding: 0px;
- margin: 0px;
-}
-
-.emoji-triggers {
-  display: flex;
-  justify-content: space-around;
+  border-radius: 3px;
   align-items: center;
-  padding: 0 40px;
-}
-
-.emoji-trigger
-{
-
-width: 60px;
-height: 60px;
-margin-top: 35px;
-font-size: 40px;
-border: 1px solid rgb(158, 204, 203);
-border-radius: 2px;
-background-color: rgb(158, 204, 203);
-}
-
-.inner-box h3 {
-  text-align: left;
-}
-
-.event-img {
-  width: 90%;
-  margin-top: 5px;
-}
-
-#bio-text {
-  text-align: left;
-  font-size: 20px;
-  padding: 0px 10px;
-}
-
-#perso {
-  margin-top: 40px;
-}
-
-.friend-count {
-  color: white;
-}
-
-.heart-dashboard {
-  color: #F29191;
 }
