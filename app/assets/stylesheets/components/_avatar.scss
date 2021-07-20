@@ -21,6 +21,7 @@
   border: white 1px solid;
 }
 
+
 .avatar-big {
   height: 90px;
   width: 90px;
@@ -28,8 +29,26 @@
   background-size: cover;
   background-position: center;
   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-  margin: 20px 20px;
+  margin: 10px 10px;
+  .avatar-big-link-text {
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 80%;  /* position the top  edge of the element at the middle of the parent */
+    left: 20%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
   }
+  &:hover{
+    .avatar-big-link-text {
+      opacity:1;
+      color: rgb(251, 136, 136);
+      font-size: 42px;
+      text-decoration: none;
+    }
+  }
+}
 
 // .avatar-big {
 //     height: 260px;
