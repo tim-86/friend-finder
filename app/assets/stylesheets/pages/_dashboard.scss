@@ -269,6 +269,172 @@
 
 .profile-card {
   background-color: #b1d6d5;
+  margin-top: 24px;
+  padding: 16px;
+  height: 300px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+}
+
+.avatar-big {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 4px;
+  margin-left: 30px;
+  margin-right: 20px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  .avatar-big-link-text {
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 80%;  /* position the top  edge of the element at the middle of the parent */
+    left: 20%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+  }
+  &:hover{
+    .avatar-big-link-text {
+      opacity:1;
+      color: rgb(251, 136, 136);
+      font-size: 42px;
+      text-decoration: none;
+    }
+}
+
+}
+
+.card-my-values {
+  background-color: white;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+  border-radius: 5px;
+
+  .fa-heart {
+    color: #F29191;
+  }
+  h3 {
+
+  }
+}
+
+
+h3 {
+    color: #5EAAA8;
+    font-size: 24px;
+    padding: 8px;
+    text-align: center;
+  }
+
+.card-about .card-bookings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  margin: 16px;
+  padding: 12px;
+}
+
+.card-personality {
+  border: 2px solid #5EAAA8;
+  border-radius: 5px;
+  width: 30%;
+  margin: 16px;
+  img {
+    height: 80px;
+    width: 80px;
+    margin: 8px;
+    margin-left: 24px;
+  }
+}
+
+.card-interest {
+  border: 2px solid #5EAAA8;
+  border-radius: 5px;
+  width: 30%;
+  margin: 16px;
+  h1 {
+    text-align: center;
+  }
+}
+
+.card-more {
+  border: 2px solid #5EAAA8;
+  border-radius: 5px;
+  width: 30%;
+  margin: 16px;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.card-more-events {
+  border: 2px solid #5EAAA8;
+  border-radius: 5px;
+  width: 30%;
+  margin: 16px;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h3 {
+    color: #5EAAA8;
+  }
+}
+
+.card-event {
+  border: 2px solid #5EAAA8;
+  border-radius: 5px;
+  width: 30%;
+  margin: 16px;
+}
+
+.personality-test {
+  justify-content: left;
+}
+
+#profile-card-dashboard {
+  margin-top: 40px;
+  width: 90%;
+  background-color: rgb(158, 204, 203);
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  padding: 18px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#dashboard-event-button {
+  padding: 5px 30px;
+}
+
+#profile-right {
+  background-color: white;
+}
+
+#profile-middle {
+  margin-top: 60px;
+}
+
+#profile-middle h5 {
+  margin-bottom: 20px;
+}
+
+#profile-right {
+  margin-right: 50px;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+
+}
+
+#profile-right h3 {
   margin-top: 20px;
   border-radius: 3px;
   align-items: center;
