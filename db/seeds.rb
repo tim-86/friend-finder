@@ -556,10 +556,67 @@ event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'n
 event.save!
 puts "event created"
 
+event = Event.new(
+  location: "New York",
+  date: "09/09/2021 19:00:00",
+  price: 19.99,
+  max_participants: 4,
+  description: "Classic Speed Friend Finding",
+  video_link: "www.google.de"
+)
+event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'new york.jpg')
+event.save!
+puts "event created"
+
+event = Event.new(
+  location: "New York",
+  date: "10/10/2021 19:00:00",
+  price: 19.99,
+  max_participants: 4,
+  description: "Classic Speed Friend Finding",
+  video_link: "www.google.de"
+)
+event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'new york.jpg')
+event.save!
+puts "event created"
+
+event = Event.new(
+  location: "New York",
+  date: "11/11/2021 19:00:00",
+  price: 19.99,
+  max_participants: 4,
+  description: "Classic Speed Friend Finding",
+  video_link: "www.google.de"
+)
+event.photo.attach(io: File.open('app/assets/images/new-york.jpg'), filename: 'new york.jpg')
+event.save!
+puts "event created"
 
 puts "creating some friends"
 
 
+
+  joey = User.new(
+  first_name: "Joey",
+  last_name: "Tribbiani",
+  location: "New York",
+  email: "joey@friends.com",
+  password: "123456",
+  birthday: "04 Jun 1991",
+  admin: true
+  )
+  joey.events << Event.all
+    file = URI.open("https://avatars.githubusercontent.com/u/81582275?v=4")
+  joey.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  joey.save!
+
+  # interests
+  %w[🍸 🦥 🚲].each_with_index do |emoji, index|
+    interest = Interest.find_by(name: emoji)
+    UserInterest.create!(user: joey, interest: interest, index: index)
+  end
+
+  puts "Brought joey to life"
 
   tim = User.new(
   first_name: "Tim",

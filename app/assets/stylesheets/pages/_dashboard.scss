@@ -5,6 +5,7 @@
   margin-top: 20px;
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  height: 200px;
 }
 
 .fa-heart {
@@ -26,4 +27,43 @@ flex: 1;
 
 .name-location {
   text-align: center;
+}
+
+.detail-card {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  height: fit-content;
+  border: 2px solid #5EAAA8;
+  margin-top: 20px;
+  background-color: #b1d6d5;
+}
+
+.header-box {
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  background-color: white;
+  color: #5EAAA8;
+  padding: 5px;
+}
+
+.header-box h5 {
+  margin-bottom: 0px;
+}
+
+.detail-description {
+  padding: 10px;
+  text-align: justify;
+}
+
+.emoji-trigger
+{
+justify-content: center;
+width: 45px;
+height: 45px;
+font-size: 35px;
+border: 1px solid #b1d6d5;
+border-radius: 2px;
+background-color: #b1d6d5;
+margin: 0 10px;
 }
