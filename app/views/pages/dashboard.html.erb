@@ -3,7 +3,7 @@
 
 <!-- profile card -->
   <div class="d-flex profile-card">
-    <div class="justify-content-center">
+    <div class="avatar-location justify-content-center">
       <% if current_user.avatar.attached? %>
         <%= link_to edit_user_registration_path do %>
           <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key%>">
@@ -18,14 +18,17 @@
         <% end %>
       <% end %>
       <div class="name-location">
-        <h6 style="margin: 0px;"><%= current_user.first_name %>, <%= ((Time.zone.now - current_user.birthday.to_time) /1.year.seconds).floor %></h6>
+        <h6 id="user-name" style="margin: 0px;"><%= current_user.first_name %>, <%= ((Time.zone.now - current_user.birthday.to_time) /1.year.seconds).floor %></h6>
         <div>
           📍<%= current_user.location %>
+        </div>
+        <div class="btn-event">
+        <%= link_to "Find Event", events_path, class: "btn-red"%>
         </div>
       </div>
     </div>
     <div class="value-card">
-      <h6 style="margin-bottom: 15px;">My Core Values </h6>
+      <h5 id= "core-values">My Core Values </h5>
       <ul class="value-list">
         <% current_user.core_values.each do |core| %>
           <% value = Value.find(UserValue.find(core).value_id) %>
@@ -34,96 +37,102 @@
           </div>
         <% end %>
       </ul>
-      <%= link_to "To Value Test", values_path, class: "btn-red justify-content-center", id: "dashboard-value-button" %>
+      <div class = "value-btn">
+        <%= link_to "To Value Test", values_path, class: "btn-red", id:"btn-home"%>
+      </div>
     </div>
   </div>
 
 <!-- profile details -->
-  <h5 style = "margin: 10px 0 0 0" >About you...</h5>
-<!-- bio -->
-  <div class="detail-card" style="margin-top: 10px;">
-    <div class="header-box">
-      <h5>Bio</h5>
-    </div>
-    <div class="detail-description">
-      <%= current_user.bio %>
-    </div>
-  </div>
+  <h5 style = "margin: 20px 0 0 0" >About you...</h5>
 
-  <!-- interests -->
-  <div class="detail-card">
-    <div class="header-box">
-      <h5>Interests</h5>
+  <div class="profile-row">
+  <!-- bio -->
+    <div class="detail-card">
+      <div class="header-box">
+        <h5>Bio</h5>
+      </div>
+      <div class="detail-description" id="bio-detail-description">
+        <%= current_user.bio %>
+      </div>
     </div>
-    <div class="d-flex detail-description justify-content-center" style = "font-size: 30px;">
-      <% @interests.each_with_index do |interest, index| %>
-        <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
-          <button class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
-          <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
+
+    <!-- interests -->
+    <div class="detail-card">
+      <div class="header-box">
+        <h5>Interests</h5>
+      </div>
+      <div class="d-flex detail-description justify-content-center" style = "font-size: 30px;">
+        <% @interests.each_with_index do |interest, index| %>
+          <%= form_with url: user_interest_set_path(index), remote: true do |f| %>
+            <button class="emoji-trigger" data-interest-index="<%= index %>"><%= interest %></button>
+            <input type="hidden" value="<%= interest %>" name="name" class="emoji-value-<%= index %>">
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
 
-<!--   personality type -->
-  <div class="detail-card">
-    <div class="header-box">
-      <h5>Personality Type</h5>
-    </div>
-    <div class="detail-description" style = "text-align: center;" >
-      <h3 style = "margin: 4px 0px">ESFP-A</h3>
+  <!--   personality type -->
+    <div class="detail-card">
+      <div class="header-box">
+        <h5>Personality Type</h5>
+      </div>
+      <div class="detail-description" style = "text-align: center;" >
+        <h3 style = "margin: 4px 0px">ESFP-A</h3>
+      </div>
     </div>
   </div>
 
 <!-- upcoming events -->
-  <h5 style = "margin: 10px 0 0 0" >Your upcoming events...</h5>
+  <h5 style = "margin: 20px 0 0 0" >Your upcoming events...</h5>
 
-    <% current_user.events.each do |event| %>
-      <% if event.date > DateTime.current %>
+    <div class="profile-row">
+      <% current_user.events.each do |event| %>
+        <% if event.date > DateTime.current %>
 
-        <div class="detail-card">
-          <%= link_to event_path(event) do %>
-            <div class = "Header-box">
-              <h5><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h5>
-            </div>
-            <div>
-              <%= image_tag "people.svg", class: "event-img" %>
-              <% if event.users.count > 1 %>
-                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
-              <% else%>
-                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
-              <% end %>
-            </div>
-          <% end %>
-        </div><!-- .col-interests -->
+          <div class="detail-card">
+            <%= link_to event_path(event) do %>
+              <div class = "header-box">
+                <h5><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h5>
+              </div>
+              <div style="text-align: center;">
+                <%= image_tag "people.svg", class: "event-img" %>
+                <% if event.users.count > 1 %>
+                  <h5 class="friend-count"><%=event.users.count %> new Friends</h5>
+                <% else%>
+                  <h5 class="friend-count"><%=event.users.count %> new Friend</h5>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 
 <!-- past events -->
 
- <h5 style = "margin: 10px 0 0 0" >Your past events...</h5>
+ <h5 style = "margin: 20px 0 0px 0" >Your past events...</h5>
 
+  <div class = "profile-row">
     <% current_user.events.each do |event| %>
-      <% if event.date > DateTime.current %>
-
+      <% if event.date < DateTime.current %>
         <div class="detail-card">
           <%= link_to event_path(event) do %>
-            <div class = "Header-box">
+            <div class = "header-box">
               <h5><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h5>
             </div>
-            <div>
+            <div style="text-align: center;"  >
               <%= image_tag "people.svg", class: "event-img" %>
               <% if event.users.count > 1 %>
-                <h4 class="friend-count"><%=event.users.count %> new Friends</h4>
+                <h5 class="friend-count"><%=event.users.count %> new Friends</h5>
               <% else%>
-                <h4 class="friend-count"><%=event.users.count %> new Friend</h4>
+                <h5 class="friend-count"><%=event.users.count %> new Friend</h5>
               <% end %>
             </div>
           <% end %>
-        </div><!-- .col-interests -->
+        </div>
       <% end %>
     <% end %>
-
-
+  </div>
 </div>
 

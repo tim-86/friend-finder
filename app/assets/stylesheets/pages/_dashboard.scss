@@ -5,7 +5,7 @@
   margin-top: 20px;
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
-  height: 200px;
+  height: fit-content;
 }
 
 .fa-heart {
@@ -15,7 +15,7 @@
 .value-card {
 background-color: white;
 margin-left: 25px;
-padding: 15px 10px 15px 25px;
+padding: 15px 5px 15px 10px;
 border-radius: 3px;
 flex: 1;
 }
@@ -35,7 +35,7 @@ flex: 1;
   box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
   height: fit-content;
   border: 2px solid #5EAAA8;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: #b1d6d5;
 }
 
@@ -66,4 +66,107 @@ border: 1px solid #b1d6d5;
 border-radius: 2px;
 background-color: #b1d6d5;
 margin: 0 10px;
+}
+
+.event-img {
+  max-width: 100%;
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.friend-count {
+  color: black;
+}
+
+.btn-event {
+  display: none;
+}
+
+.value-btn {
+  text-align: center;
+}
+
+#core-values {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.detail-card {
+  height: 200px;
+  position: relative;
+  text-align: center;
+}
+
+.detail-description {
+  position: inherit;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bio-detail-description {
+  position: static;
+  transform: none;
+}
+
+.avatar-location{
+  display: flex;
+  align-items: center;
+}
+
+.avatar-big {
+  width: 200px;
+  height: 200px;
+  margin-right: 60px;
+}
+
+.value-card {
+  margin-left: 100px;
+}
+
+.btn-event {
+  display: block;
+  margin-top: 15px;
+}
+
+#user-name {
+  font-size: 25px;
+}
+
+#btn-home {
+  background-color: #5EAAA8;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 6px 15px;
+}
+
+#btn-home:hover {
+  background-color: #529c9a;
+  transition: 0.2s;
+  text-decoration: none;
+  color: white;
+}
+
+.value-btn {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+#core-values {
+  margin-bottom: 15px;
+}
+}
+
+@media (min-width: 768px) {
+
 }
