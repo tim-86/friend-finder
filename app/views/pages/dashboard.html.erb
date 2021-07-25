@@ -3,7 +3,7 @@
 
 <!-- profile card -->
   <div class="d-flex profile-card">
-    <div class="avatar-location justify-content-center">
+    <div class="avatar-location">
       <% if current_user.avatar.attached? %>
         <%= link_to edit_user_registration_path do %>
           <div class="avatar-big" style="background-image: url(<%= cl_image_path current_user.avatar.key%>">
@@ -44,7 +44,9 @@
   </div>
 
 <!-- profile details -->
-  <h5 style = "margin: 20px 0 0 0" >About you...</h5>
+  <div class = "section-headers">
+    <h5 style = "margin: 20px 0 0 0" >About you...</h5>
+  </div>
 
   <div class="profile-row">
   <!-- bio -->
@@ -84,7 +86,9 @@
   </div>
 
 <!-- upcoming events -->
-  <h5 style = "margin: 20px 0 0 0" >Your upcoming events...</h5>
+  <div class = "section-headers">
+    <h5 style = "margin: 20px 0 0 0" >Your upcoming events...</h5>
+  </div>
 
     <div class="profile-row">
       <% current_user.events.each do |event| %>
@@ -93,7 +97,7 @@
           <div class="detail-card">
             <%= link_to event_path(event) do %>
               <div class = "header-box">
-                <h5><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h5>
+                <h5><%=event.date.to_time.strftime('%b %e at %l:%M %p') %></h5>
               </div>
               <div style="text-align: center;">
                 <%= image_tag "people.svg", class: "event-img" %>
@@ -110,8 +114,9 @@
     </div>
 
 <!-- past events -->
-
- <h5 style = "margin: 20px 0 0px 0" >Your past events...</h5>
+  <div class="section-headers">
+    <h5 style = "margin: 20px 0 0px 0" >Your past events...</h5>
+  </div>
 
   <div class = "profile-row">
     <% current_user.events.each do |event| %>
@@ -119,7 +124,7 @@
         <div class="detail-card">
           <%= link_to event_path(event) do %>
             <div class = "header-box">
-              <h5><%=event.date.to_time.strftime('%B %e at %l:%M %p') %></h5>
+              <h5><%=event.date.to_time.strftime('%b %e at %l:%M %p') %></h5>
             </div>
             <div style="text-align: center;"  >
               <%= image_tag "people.svg", class: "event-img" %>
