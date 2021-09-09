@@ -72,3 +72,21 @@
   background-color: #529c9a;
 }
 
+.btn-login-form {
+  background-color: #5EAAA8;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  margin: 40px 0 30px 0;
+
+}
+
+.btn-login-form:hover {
+  text-decoration: none;
+  transition: 0.2s;
+  background-color: #529c9a;
+  color: white;
+}
+

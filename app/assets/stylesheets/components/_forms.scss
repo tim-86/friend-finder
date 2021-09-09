@@ -1,0 +1,80 @@
+.form-box {
+  display: flex;
+  margin: 60px auto;
+}
+
+.login-box {
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  padding-top: 40px;
+  width: 350px;
+}
+
+.login-title {
+  background-color: #5EAAA8;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  border-radius: 3px 3px 0 0;
+}
+
+#password-link {
+  color: #9ecccb;
+  float: right;
+  font-size: 14px;
+}
+
+#password-link:hover{
+  transition: 0.2s;
+  color: #529c9a;
+}
+
+
+.form-control {
+  border-radius: 3px;
+}
+
+.form-group.password {
+  margin: 10px 0 0 0;
+}
+
+.sign-up-link {
+  color: #5EAAA8;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+#birthday {
+  color: #6C757C;
+}
+
+abbr {
+  display: none;
+}
+
+#user_birthday_3i {
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .login-container {
+    width: 100%;
+  }
+
+  .login-title {
+    background-color: white;
+    color: #5EAAA8
+  }
+
+.login-box {
+  box-shadow: none;
+  width: 100%;
+}
+
+}
+
+
